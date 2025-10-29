@@ -1,9 +1,60 @@
-*{
-    padding: 0;
+/* RESET */
+* { 
+    padding: 0; 
     margin: 0;
     box-sizing: border-box;
     border: none;
+    border-radius: 0;
     outline: none;
-    background-color: none;
-    
+    background: none;
+    color: black; 
+    /* font-family: Inter; */
+    font-weight: 400;
+    font-size: 62.5%;
+    text-decoration: none;
+} 
+
+a:visited { 
+    color: black;
+    text-decoration: none; 
+}
+ 
+/* VARIABLES */
+
+:root { 
+    --text-primary-color: #7B542F; 
+    --background-primary-color: #B6771D; 
+    --secondary-color: #FFCF71;
+    --shadow-color: #FF9d00; 
+    --pad-s: 3.5px 6px; 
+    --pad-m: 5px 8px;
+    --pad-l: 10px 15px; 
+    --n-pad-s: 3px 8px;
+    --n-pad-m: 4px 12px;  
+    --n-pad-l: 5px 28px;   
+} 
+ 
+/* UTILITIES */ 
+
+.text-s { 
+    font-size: 1.4rem;
+}
+.text-m { 
+    font-size: 1.8rem;
+} 
+.text-l { 
+    font-size: 2.4rem;
+}
+.text-xl {
+    font-size: 2.8rem; 
+} 
+
+.w-l { 
+    font-weight: 200;
+} 
+.w-m { 
+    font-weight: 400;
+} 
+.w-b { 
+    font-weight: 700;
 }
