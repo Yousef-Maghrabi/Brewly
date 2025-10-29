@@ -67,10 +67,50 @@ a:visited {
     border: 1.5px solid #1b1b1b;
     border-radius: 6px;
     font-size: 2rem;
+    transition: 0.3s;
+}
+.btn-accent:hover{
+    background-color: var(--shadow-color);
+    border: 1.5px solid var(--shadow-color);
+    border-radius: 6px;
+    font-size: 2rem;
 }
 .btn-secondary{
     background-color: var(--secondary-color);
     border: 1.5px solid #1b1b1b;
+    border-radius: 6px;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+.btn-secondary:hover{
+    background-color: var(--shadow-color);
+    border: 1.5px solid var(--shadow-color);
+    border-radius: 6px;
+    font-size: 2rem;
+}
+.btn-outline--accent{
+    color: var(--background-primary-color);
+    border: 1.5px solid var(--background-primary-color);
+    border-radius: 6px;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+.btn-outline--accent:hover{
+    color: var(--text-primary-color);
+    border: 1.5px solid var(--text-primary-color);
+    border-radius: 6px;
+    font-size: 2rem;
+}
+.btn-outline--secondary{
+    color: var(--secondary-color);
+    border: 1.5px solid var(--secondary-color);
+    border-radius: 6px;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+.btn-outline--secondary:hover{
+    color: var(--shadow-color);
+    border: 1.5px solid var(--shadow-color);
     border-radius: 6px;
     font-size: 2rem;
 }
