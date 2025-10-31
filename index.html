@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brewly</title>
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./styles/normalize.css">
-    <link rel="stylesheet" href="./styles/globals.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
-    <script src="./scripts/main.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brewly Coffee Shop</title>
+  <link rel="stylesheet" href="./styles/src/index.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet" />
+  <script src="./scripts/main.js" defer></script>
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <h1>Brewly</h1>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Menu</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="./pages/dark.html"> Dark Mode </a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Freshly Brewed Happiness ☕</h2>
+    <p>Welcome to Brewly — your cozy neighborhood coffee spot serving artisan roasts, warm smiles, and fresh pastries daily.</p>
+    <button class="btn-primary">Order Your Brew</button>
+  </section>
+
+  <!-- Featured Coffee Section -->
+  <section class="featured">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=80&q=80" alt="Espresso">
+      <h3>Espresso</h3>
+      <p>Rich, bold, and perfectly balanced for your morning boost.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1559672212-02ee6847c1a9?auto=format&fit=crop&w=80&q=80" alt="Cappuccino">
+      <h3>Cappuccino</h3>
+      <p>Velvety steamed milk with a creamy layer of foam — a timeless favorite.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=80&q=80" alt="Cold Brew">
+      <h3>Cold Brew</h3>
+      <p>Slow-steeped, smooth, and naturally sweet — refreshingly different.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Brewly Coffee Shop. Crafted with ❤️ and freshly roasted beans.</p>
+  </footer>
 </body>
 </html>
