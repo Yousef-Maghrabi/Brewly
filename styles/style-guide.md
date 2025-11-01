@@ -1,6 +1,6 @@
 ## Sturcture
- - `tokens.css` => to store design tokens 
- - `globals.css` => reset and config
+ - `tokens.css` => to store design tokens and fonts
+ - `globals.css` => reset and importing other tools like normalize
  - `utils/` => to create classes will be used frequently like flex-center like flex-v like text-bold
  - `components/`=> to create component and use them frequently without changing the ui hierachy 
  - `src/`=> to link html with css 
