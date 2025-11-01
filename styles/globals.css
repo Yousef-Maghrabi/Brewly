@@ -17,78 +17,113 @@
     font-weight: 400;
     font-size: 77.5%;
     text-decoration: none;
-}
-/* 3. Root settings */
-html {
-  font-size: 100%; /* 16px base */
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+} 
 
-/* 4. Body defaults */
-body {
-  font-family: var(--font-family-base, 'Inter', sans-serif);
-  background-color: var(--color-bg-default);
-  line-height: 1.6;
+a:visited { 
+    color: black;
+    text-decoration: none; 
 }
+ 
+/* VARIABLES */
 
-/* 5. Headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-heading, 'Poppins', sans-serif);
-  color: var(--color-neutral-900);
-  font-weight: 600;
-  line-height: 1.2;
-}
+:root { 
+    --text-primary-color: #7B542F; 
+    --background-primary-color: #B6771D; 
+    --secondary-color: #FFCF71;
+    --shadow-color: #FF9d00; 
+    --pad-s: 3.5px 6px; 
+    --pad-m: 5px 8px;
+    --pad-l: 10px 15px; 
+    --n-pad-s: 3px 8px;
+    --n-pad-m: 4px 12px;  
+    --n-pad-l: 5px 28px;   
+} 
+ 
+/* UTILITIES */ 
 
-/* 6. Links */
-a {
-  color: var(--color-primary-500);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--color-primary-600);
-}
-
-/* 7. Images and media */
-img, picture, video, canvas {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/* 8. Buttons and inputs */
-button, input, select, textarea {
-  font: inherit;
-  border: none;
-  outline: none;
-  background: none;
-}
-
-/* 9. Accessibility & focus */
-:focus {
-  outline: 2px solid var(--color-primary-400);
-  outline-offset: 2px;
-}
-
-/* 10. Scrollbars (optional aesthetic) */
-::-webkit-scrollbar {
-  width: 0.3rem;
+.text-s { 
+    font-size: 1.4rem;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-primary-300);
   border-radius: 10px;
 }
+.text-xl {
+    font-size: 2.8rem; 
+} 
 
-/* 11. Containers and layout helpers */
-.container {
-  width: min(90%, 1200px);
-  margin-inline: auto;
+.w-l { 
+    font-weight: 200;
+} 
+.w-m { 
+    font-weight: 400;
 } 
 
 /* 12. Utility spacing (optional) */
 .section {
   padding-block: var(--spacing-8);
+}
+
+/*part 3- buttons*/
+.btn-accent{ 
+    background-color: var(--background-primary-color);
+    border: 1.5px solid #1b1b1b;
+    border-radius: 6px;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+.btn-accent:hover{
+    background-color: var(--shadow-color);
+    border: 1.5px solid var(--shadow-color);
+    border-radius: 6px;
+    font-size: 2rem;
+}
+.btn-secondary{
+    background-color: var(--secondary-color);
+    border: 1.5px solid #1b1b1b;
+    border-radius: 6px;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+.btn-secondary:hover{
+    background-color: var(--shadow-color);
+    border: 1.5px solid var(--shadow-color);
+    border-radius: 6px;
+    font-size: 2rem;
+}
+.btn-outline--accent{
+    color: var(--background-primary-color);
+    border: 1.5px solid var(--background-primary-color);
+    border-radius: 6px;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+.btn-outline--accent:hover{
+    color: var(--text-primary-color);
+    border: 1.5px solid var(--text-primary-color);
+    border-radius: 6px;
+    font-size: 2rem;
+}
+.btn-outline--secondary{
+    color: var(--secondary-color);
+    border: 1.5px solid var(--secondary-color);
+    border-radius: 6px;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+.btn-outline--secondary:hover{
+    color: var(--shadow-color);
+    border: 1.5px solid var(--shadow-color);
+    border-radius: 6px;
+    font-size: 2rem;
+}
+.btn-sml { 
+    padding: var(--pad-s);
+}
+
+.btn-mdm{
+    padding: var(--pad-m);
+}
+.btn-lge{
+    padding: var(--pad-l);
 }
