@@ -1,0 +1,37 @@
+/* Static grid column count */
+.layout_grid-2 { 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-m);
+}
+.layout_grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-m);
+}
+
+/* Auto-grid by min size */
+.layout_grid-auto-200 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-m);
+}
+.layout_grid-auto-300 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-m);
+}
+
+/* Dynamic via variable (custom proportions) */
+.layout_grid-dynamic {
+  display: grid;
+  grid-template-columns: var(--layout-columns, 1fr 1fr);
+  grid-template-rows: var(--layout-rows, auto);
+  gap: var(--space-m);
+}
+
+/* Responsive fallback */
+@media (max-width: var(--breakpoint-md)) {
+  .layout_grid-3 { grid-template-columns: 1fr; }
+  .layout_grid-2 { grid-template-columns: 1fr; }
+}

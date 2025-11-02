@@ -1,106 +1,17 @@
 :root {
-  /* =========================
-     Primitive / Core Tokens
-     ========================= */
-  /* Primary (brown brand) */
-  --color-primary-100: #f6ede6;
-  --color-primary-200: #eed9c8;
-  --color-primary-300: #e0c2a0;
-  --color-primary-400: #caa079;
-  --color-primary-500: #8b5e34;
-  --color-primary-600: #7a4f2b;
-  --color-primary-700: #603e20;
-  --color-primary-800: #452b14;
-  --color-primary-900: #2b1608;
-  /* Secondary (caramel accent) */
-  --color-secondary-100: #fff7ed;
-  --color-secondary-200: #ffe8cc;
-  --color-secondary-300: #ffd3a3;
-  --color-secondary-400: #ffb66b;
-  --color-secondary-500: #ff9a2e;
-  --color-secondary-600: #e07f24;
-  --color-secondary-700: #b0621b;
-  --color-secondary-800: #7f4412;
-  --color-secondary-900: #4f2b0a;
-  /* Neutral / grayscale */
-  --color-neutral-100: #fafafa;
-  --color-neutral-200: #f4f5f7;
-  --color-neutral-300: #e6e7ea;
-  --color-neutral-400: #d1d5db;
-  --color-neutral-500: #9aa3ad;
-  --color-neutral-600: #6b7280;
-  --color-neutral-700: #4b5563;
-  --color-neutral-800: #374151;
-  --color-neutral-900: #111827;
-  /* Status / functional colors */
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
-  --color-success: #22c55e;
-  /* =========================
-     Semantic / alias tokens
-     (map primitives into roles)
-     ========================= */
-  /* Text / icon colors */
-  --color-text-default: var(--color-neutral-900);
-  --color-text-primary: var(--color-primary-700);
-  --color-text-muted: var(--color-neutral-600);
-  --color-text-inverted: var(--color-neutral-300); 
-  /* Background surfaces */
-  --color-bg-default: var(--color-neutral-100);
-  --color-bg-surface: var(--color-neutral-200);
-  --color-bg-primary: var(--color-primary-100);
-  /* Border / divider */
-  --color-border-default: var(--color-neutral-300);
-  --color-border-muted: var(--color-neutral-400);
-  --color-border-primary: var(--color-primary-400);
-  /* Accent */
-  --color-accent-default: var(--color-secondary-500);
-  --color-accent-hover: var(--color-secondary-400);
-  --color-accent-active: var(--color-secondary-600);
-  /* Borders */
-  --border-width-thin: 1px;
-  --border-width: 2px;
-  --border-width-thick: 4px;
-  /* Radius */ 
-  --radius-s: 2px;
-  --radius-m: 4px;
-  --radius-l: 8px;
-  --radius-round: 50%;
-  /* Icons */
-  --size-icon-small: 1rem;
-  --size-icon-medium: 1.5rem;
-  --size-icon-large: 2rem;
-  /* Breakpoints  */
-  --screen-xs: 480px;
-  --screen-s: 768px;
-  --screen-m: 1024px;
-  --screen-l: 1280px;
-  /* Layering */
-  --z-default: 0;
-  --z-dropdown: 100;
-  --z-modal: 1000;
-  --z-toast: 1100;
-  --z-tooltip: 1200;
-  /* Transition */
-  --duration-fast: 150ms;
-  --duration-medium: 300ms;
-  --duration-slow: 500ms;
-  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
-  --easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
-  @media (prefers-color-scheme: dark) {
-    /* Dark mode overrides for semantic tokens */
-    --color-text-default: var(--color-neutral-100);
-    --color-text-primary: var(--color-primary-300);
-    --color-text-muted: var(--color-neutral-400);
-    --color-bg-default: var(--color-neutral-700);
-    --color-bg-surface: var(--color-neutral-600);
-    --color-bg-primary: var(--color-primary-300);
-    --color-border-default: var(--color-neutral-700);
-    --color-border-primary: var(--color-primary-300);
-    --color-accent-default: var(--color-secondary-600);
-    --color-accent-hover: var(--color-secondary-700); 
-    --color-accent-active: var(--color-secondary-500);
-    --color-text-inverted: var(--color-neutral-800); 
-  }
+  --color-bg: #fff;
+  --color-surface: #f1f3f4;
+  --color-primary: #1a73e8;
+  --color-on-surface: #202124;
+  --color-disabled: #5f6368;
+
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-m: 16px;
+  --space-l: 24px;
+  --space-xl: 32px;
+
+  --container-max-width: 1200px;
+
+  --breakpoint-md: 768px;
 }

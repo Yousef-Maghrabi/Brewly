@@ -1,14 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Complex Page Demo</title>
-  <link rel="stylesheet" href="styles/tokens.css">
-  <link rel="stylesheet" href="styles/globals.css">
-  <link rel="stylesheet" href="styles/utils/layout.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gmail Clone (Test Layout)</title>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/globals.css" />
+  <link rel="stylesheet" href="styles/utils/layout.css" />
+  <link rel="stylesheet" href="styles/sample.css" />
 </head>
 <body>
-  <div class="layout-spacing"></div>
+
+  <!-- Top container: sidebar + main -->
+  <div class="layout_container-h_2">
+
+    <!-- Sidebar area -->
+    <div class="layout_content layout_flex-v">
+      <div class="sidebar">
+        <nav>
+          <a href="#">Inbox</a>
+          <a href="#">Sent</a>
+          <a href="#">Drafts</a>
+          <a href="#">Spam</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main area (header + inbox + read pane) -->
+    <div class="layout_content layout_flex-v">
+
+      <div class="header layout_flex-h layout_align-center">
+        <button>☰</button>
+        <div class="search-bar">
+          <input type="text" placeholder="Search mail" />
+        </div>
+        <button>Profile</button>
+      </div>
+
+      <div class="layout_container-v_2">
+
+        <!-- Inbox / toolbar -->
+        <div class="layout_content">
+          <div class="main-inbox layout_flex-v">
+            <div class="toolbar">
+              <button>Refresh</button>
+              <button>More</button>
+            </div>
+            <div class="email-list">
+              <div class="email-item"><strong>Subject 1</strong> — preview text …</div>
+              <div class="email-item"><strong>Subject 2</strong> — preview text …</div>
+              <div class="email-item"><strong>Subject 3</strong> — preview text …</div>
+              <div class="email-item"><strong>Subject 4</strong> — preview text …</div>
+              <div class="email-item"><strong>Subject 5</strong> — preview text …</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Read pane / email open view -->
+        <div class="layout_content">
+          <div class="read-pane">
+            <h2>Subject 1</h2>
+            <p>This is the content of the email. Lorem ipsum dolor sit amet...</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </body>
 </html>

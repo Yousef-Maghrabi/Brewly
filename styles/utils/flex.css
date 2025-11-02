@@ -1,0 +1,29 @@
+/* Direction */
+.flex-v {
+  display: flex;
+  flex-direction: row;
+}
+.flex-v {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Justification (main axis) */
+.flex_justify-start   { justify-content: flex-start; }
+.flex_justify-center  { justify-content: center; }
+.flex_justify-end     { justify-content: flex-end; }
+.flex_justify-between { justify-content: space-between; }
+.flex_justify-around  { justify-content: space-around; }
+.flex_justify-evenly  { justify-content: space-evenly; }
+
+/* Alignment (cross axis) */
+.flex_align-start   { align-items: flex-start; }
+.flex_align-center  { align-items: center; }
+.flex_align-end     { align-items: flex-end; }
+.flex_align-stretch { align-items: stretch; }
+
+/* Combined shorthand */
+.flex_center {
+  align-items: center;
+  justify-content: center;
+}

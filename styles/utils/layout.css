@@ -1,75 +1,58 @@
-/* 
-=========================================
-  LAYOUT SYSTEM
-=========================================
-  • Container Units → define page-level grids
-  • Content Units → hold similar elements
-  • Spacing Units → replace empty space
+/* =====================================
+   DBSS: Layout System (Containers + Units)
+   ===================================== */
 
-  Containers are always grid-based.
-  Content units can use flex or grid internally.
-*/
+/* Root sizing */
+html, body {
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
 
-/* Base rule: all containers adapt to their parent */
+/* All containers adapt to their parent */
 [class^="layout_container-"] {
   display: grid;
   width: 100%;
   height: 100%;
+  min-height: 100%;
   position: relative;
+  align-items: stretch;
+  justify-items: stretch;
+  overflow: visible;
+}
+
+/* Root-level containers use viewport space */
+body > [class^="layout_container-"] {
+  width: 100vw;
+  min-height: 100dvh;
   overflow: hidden;
 }
 
-/* Top-level containers (directly under <body>) take full viewport */
-body > [class^="layout_container-"] {
-  width: 100vw;
-  min-height: 100vh;
-}
-
-/* ========== Container Variants ========== */
-.layout_container-v_2 { grid-template-rows: 1fr 1fr; }
-.layout_container-v_3 { grid-template-rows: 1fr 1fr 1fr; }
-.layout_container-h_2 { grid-template-columns: 1fr 1fr; }
-.layout_container-h_3 { grid-template-columns: 1fr 1fr 1fr; }
-
-/* ========== Units ========== */
+/* Content and spacing units */
 .layout_content,
 .layout_spacing {
   width: 100%;
   height: 100%;
 }
 
-/* ========== Flex Directions (Content Units) ========== */
-.layout_flex-v { 
-  display: flex; 
-  flex-direction: column;
+/* Container orientation and splitting */
+.layout_container-h_2 { grid-template-columns: 1fr 1fr; }
+.layout_container-h_3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.layout_container-v_2 { grid-template-rows: 1fr 1fr; }
+.layout_container-v_3 { grid-template-rows: 1fr 1fr 1fr; }
+
+/* Responsive fallback */
+@media (max-width: var(--breakpoint-md)) {
+  .layout_container-h_2,
+  .layout_container-h_3 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
 }
 
-.layout_flex-h { 
-  display: flex; /* default row direction */
+/* Children auto placement */
+[class^="layout_container-"] > * {
+  grid-row: auto;
+  grid-column: auto;
 }
-
-/* ========== Justify Content (main axis spacing) ========== */
-.layout_justify-between { justify-content: space-between; }
-.layout_justify-evenly  { justify-content: space-evenly; }
-.layout_justify-around  { justify-content: space-around; }
-.layout_justify-start   { justify-content: flex-start; }
-.layout_justify-end     { justify-content: flex-end; }
-
-/* ========== Align Items (cross axis alignment) ========== */
-.layout_align-start   { align-items: flex-start; }
-.layout_align-end     { align-items: flex-end; }
-.layout_align-center  { align-items: center; }
-
-/* ========== Center Both Axes ========== */
-.layout_center { 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ========== Grid Utilities (Content Units) ========== */
-.layout_grid-auto-250 { display: grid; grid-template-rows: repeat(auto-fill, 250px); }
-.layout_grid-auto-300 { display: grid; grid-template-rows: repeat(auto-fill, 300px); }
-.layout_grid-auto-400 { display: grid; grid-template-rows: repeat(auto-fill, 400px); }
-.layout_grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-l, 1rem); }
-.layout_grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-l, 1rem); }
