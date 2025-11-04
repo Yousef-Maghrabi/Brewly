@@ -19,7 +19,7 @@ html, body {
   align-items: stretch;
   justify-items: stretch;
   overflow: visible;
-}
+} 
 
 /* Content and spacing units */
 .layout_content,

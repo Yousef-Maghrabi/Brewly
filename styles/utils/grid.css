@@ -1,37 +1,47 @@
 /* Static grid column count */
-.layout_grid-2 { 
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+.layout_grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
+
 .layout_grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 }
 
 .layout_grid-auto-300 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1rem;
 }
 
-.layout_grid-child_align_center {  /* Add more styles if needed */
+.layout_grid-child_align_center { /* Add more styles if needed */
     align-content: center;
 }
+
 .layout_grid-child_justify_center { /* Add more styles if needed */
     justify-items: center;
+}
+
+.layout_grid-order_1 {
+    order: 1;
+}
+
+.layout_grid-order_2 {
+    order: 2;
 }
 
 /* ########################################## */
 /* ################## NOTE ################## */
 /* ########################################## */
-/* ! The Following selector isn't a best practice because of css vars caching used only on specific responsive layouts */
+/* ! The Following selector isn't a best practice because of css vars caching. used only on specific responsive layouts */
 
 /* Dynamic via variable (custom proportions) */
 .layout_grid-dynamic {
-  display: grid;
-  grid-template-columns: var(--layout-columns, 1fr 1fr);/* Default: added while using, or added manually */
-    grid-template-rows: var(--layout-rows, auto);/* added manually */
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: var(--layout-columns, 1fr 1fr); /* Default: added while using, or added manually */
+    grid-template-rows: var(--layout-rows, auto); /* added manually */
+    gap: 1rem;
 }

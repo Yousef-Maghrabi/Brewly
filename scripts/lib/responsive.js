@@ -13,7 +13,7 @@ function windowSize() {
     return "s";
   } else if (window.innerWidth <= 768) {
     return "m";
-  } else if (window.innerWidth <= 992) {
+  } else if (window.innerWidth <= 1200) {
     return "l";
   } else {
     return "xl";
