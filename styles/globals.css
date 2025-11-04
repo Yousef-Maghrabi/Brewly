@@ -83,7 +83,4 @@ button, input, select, textarea {
   margin-inline: auto;
 }
 
-/* 12. Utility spacing (optional) */
-.section {
-  padding-block: var(--spacing-8);
-}
+.none { display: none; }
