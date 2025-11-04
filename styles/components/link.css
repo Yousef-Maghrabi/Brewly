@@ -1,0 +1,50 @@
+/*
+==========================================================================
+  Link Component
+==========================================================================
+*/
+
+/*
+ * 1. Base Link
+ * A general-purpose link class that uses primary brand colors.
+ * It provides a clear visual affordance on hover and focus.
+ */
+.link {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--easing-standard);
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--color-primary-600); /* A slightly darker shade for interaction */
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-width-thin);
+  text-underline-offset: 2px;
+}
+
+/*
+ * 2. Subtle Link Variant
+ * For less prominent links, using muted text colors.
+ */
+.link_subtle {
+  color: var(--color-text-muted);
+}
+
+.link_subtle:hover,
+.link_subtle:focus-visible {
+  color: var(--color-text-default);
+}
+
+/*
+ * 3. Icon Link Variant
+ * For links that contain both text and an icon.
+ * Ensures vertical alignment and consistent spacing.
+ */
+.link--icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem; /* Uses spacing token for gap */
+  text-decoration: none !important; /* The icon itself shouldn't be underlined */
+}

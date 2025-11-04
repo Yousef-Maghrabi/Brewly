@@ -1,0 +1,178 @@
+:root{
+    --footer-bg: #0f0f0f;
+    --footer-ink: #f6f5f4;
+    --footer-muted: rgba(246,245,244,0.6);
+    --accent: #d4a373; /* Brewly accent (adjust to match your palette) */
+}
+
+/* Base */
+.brewly-footer {
+    background: var(--footer-bg);
+    color: var(--footer-ink);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    padding: 2rem 1rem 1.5rem;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+/* inner container constrains width and creates columns */
+.brewly-footer__inner {
+    max-width: 1200px;        /* matches typical layout width */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr; /* brand a bit wider */
+    gap: 1.5rem;
+    align-items: start;
+    padding: 0 1rem;
+}
+
+/* Brand column */
+.brewly-footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: flex-start;
+}
+
+/* Logo sizing fix (prevents giant logo) */
+.brewly-footer__logo {
+    max-width: 160px;   /* keeps logo reasonable */
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Tagline */
+.brewly-footer__tag {
+    margin: 0;
+    color: var(--footer-muted);
+    font-size: 0.95rem;
+    line-height: 1.3;
+}
+
+/* Column headings / lists */
+.brewly-footer__heading {
+    margin: 0 0 0.6rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--footer-ink);
+}
+
+.brewly-footer__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.45rem;
+}
+
+.brewly-footer__link {
+    color: var(--footer-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: color 180ms ease, transform 180ms ease;
+}
+
+.brewly-footer__link:hover {
+    color: var(--accent);
+    transform: translateX(2px);
+}
+
+/* Social + CTA column */
+.brewly-footer__cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-end;
+}
+
+/* Social icons row */
+.brewly-footer__social {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.brewly-footer__social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--footer-muted);
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    transition: background .18s ease, color .18s ease, transform .18s ease;
+    text-decoration: none;
+}
+
+.brewly-footer__social-link i {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.5;
+}
+
+.brewly-footer__social-link:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Newsletter button (local override so it looks like your other accent buttons) */
+.btn-newsletter {
+    display: inline-block;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity .18s ease, transform .12s ease;
+}
+
+.btn-newsletter:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+}
+
+/* Bottom small copyright */
+.brewly-footer__bottom {
+    max-width: 1200px;
+    margin: 1.25rem auto 0;
+    padding: 0 1rem;
+}
+
+.brewly-footer__small {
+    color: var(--footer-muted);
+    text-align: center;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* Responsive: stack cols on smaller screens */
+@media (max-width: 900px) {
+    .brewly-footer__inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .brewly-footer__cta {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .brewly-footer__inner {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .brewly-footer__cta,
+    .brewly-footer__brand {
+        align-items: flex-start;
+    }
+
+    .brewly-footer__logo {
+        max-width: 140px;
+    }
+}

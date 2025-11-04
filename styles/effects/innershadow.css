@@ -1,0 +1,50 @@
+/* --- Base Container --- */
+.effect-inner_shadow_container {
+    /* Set size and aspect ratio */
+    width: 100%; 
+    max-width: 800px; /* Optional: Set a max width for viewing */
+    aspect-ratio: 16 / 9;
+    
+    /* Essential properties for effect containment */
+    position: relative;
+    overflow: hidden; 
+    
+    /* Style the container */
+    border-radius: 12px; /* Adjust as needed */
+    background-color: #333; /* Dark background color for content area */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Outer shadow for lift */
+}
+
+/* --- Content Media (e.g., an image) --- */
+.effect-inner_shadow_media {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover; /* Ensures content fills the area */
+    z-index: 1; /* Place below the dissolve layer */
+}
+
+
+/* --- The Dissolve/Inner Shadow Layer --- */
+.effect-inner-shadow_layer {
+    position: absolute;
+    inset: 0;
+    z-index: 2; /* Ensure it sits on top of the media */
+    pointer-events: none; /* Allows clicks to pass through to content below */
+    border-radius: inherit; /* Inherit border radius from the container */
+
+    /* 1. Inset Box Shadow (The Soft Inner Borderless Shadow) */
+    box-shadow: 
+        inset 0 0 80px rgba(0, 0, 0, 0.8), /* Deeper shadow */
+        inset 0 0 160px rgba(0, 0, 0, 0.4); /* Softer, wider shadow */
+
+    /* 2. Radial Gradient (The Dissolve/Vignette Effect) */
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 0) 50%,        /* Center is fully transparent */
+        rgba(0, 0, 0, 0.3) 75%,      /* Soft fade begins */
+        rgba(0, 0, 0, 0.7) 90%,
+        rgba(0, 0, 0, 0.9) 100%      /* Edges are deep black/shadow */
+    );
+}

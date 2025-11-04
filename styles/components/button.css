@@ -1,44 +1,50 @@
-/* Sizing */ 
-.btn-s { 
-    padding: 2.5px 5px; 
-} 
-.btn-m { 
-    padding: 4px 8px;
-} 
-.btn-l { 
-    padding: 6px 15px;
-}  
-.btn-full { 
-    width: calc(100% - 10px);
-    margin-left: 5px; 
-    margin-right: 5px;
+/*
+==========================================================================
+  Button Component
+==========================================================================
+*/
+
+/* 1. Base Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem; /* Default is medium */
+  border-radius: var(--radius-m);
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard),
+              border-color var(--duration-fast) var(--easing-standard);
 }
-/* Modes */ 
-.btn-default { 
-    border: 1.5px solid var(--color-border-primary);
-    background-color: var(--color-bg-surface);
-    color: var(--color-text-muted);
-} 
-.btn-default:hover { 
-    border: 1px solid var(--color-border-default);
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-default);
-} 
-.btn-accent {
-    border:1px solid var(--color-accent-default);
-    background-color: var(--color-accent-default);
-    color: var(--color-text-inverted);
+
+/* 2. Sizing Variants */
+.btn--s { padding: 0.25rem 0.5rem; }
+.btn--m { padding: 0.5rem 1rem; } /* Default size */
+.btn--l { padding: 0.75rem 1.25rem; }
+.btn--full {
+  display: block;
+  width: 100%;
 }
-.btn-accent:hover {
-    border:1px solid var(--color-accent-hover);
-    background-color: var(--color-bg-surface);
-    color: var(--color-text-default);
+
+/* 3. Style Variants */
+
+/* Default / Secondary Button */
+.btn--default {
+  border: var(--border-width-thin) solid var(--color-border-default);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-default);
 }
-.btn-outline { 
-    border: 1px solid var(--color-border-primary);
-    color: var(--color-text-primary);
-} 
-.btn-outline:hover { 
-    border: 1px solid var(--color-accent-hover);
-    color: var(--color-accent-hover);
+.btn--default:hover {
+  background-color: var(--color-neutral-300); /* Lighten surface on hover */
+}
+
+/* Accent / Primary Button */
+.btn--accent {
+  border: var(--border-width-thin) solid var(--color-accent-default);
+  background-color: var(--color-accent-default);
+  color: var(--color-neutral-900); /* Dark text on bright background */
+}
+.btn--accent:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
 }

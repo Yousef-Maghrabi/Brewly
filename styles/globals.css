@@ -1,19 +1,89 @@
+/* 1. Import foundation files (Tokens first!) */
 @import "./tokens.css";
-
+@import "./normalize.css";
+/*
+   2. A Modern CSS Reset
+   - More gentle than a hard `*` reset.
+   - Sets sensible defaults.
+*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: var(--color-on-surface);
-  background-color: var(--color-bg);
+  padding: 0;
 }
 
+/* 3. Root settings */
+html {
+  font-size: 100%; /* Default 16px base, allows user to zoom */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 4. Body defaults */
+body {
+  font-family: var(--font-family-base, 'Inter', sans-serif);
+  color: var(--color-text-default);
+  background-color: var(--color-bg-default);
+  line-height: 1.5;
+}
+
+/* 5. Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading, 'Poppins', sans-serif);
+  color: var(--color-neutral-900);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* 6. Links */
 a {
-  color: var(--color-primary);
+  color: var(--color-text-primary);
   text-decoration: none;
+  transition: color var(--duration-fast) var(--easing-standard);
+}
+
+a:hover {
+  color: var(--color-primary-600); /* A slightly darker shade for hover */
+}
+
+/* 7. Images and media */
+img, picture, video, canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 8. Buttons and inputs */
+button, input, select, textarea {
+  font: inherit;
+}
+
+/* 9. Accessibility & focus */
+/* Use :focus-visible to only show outlines for keyboard users */
+:focus-visible {
+  outline: var(--border-width) solid var(--color-accent-default);
+  outline-offset: 2px;
+}
+
+/* 10. Scrollbars (optional aesthetic) */
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-300);
+  border-radius: 10px;
+}
+
+/* 11. Containers and layout helpers */
+.container {
+  width: min(90%, 1200px);
+  margin-inline: auto;
+}
+
+/* 12. Utility spacing (optional) */
+.section {
+  padding-block: var(--spacing-8);
 }

@@ -1,79 +1,88 @@
-/*Margin (not recomended -> use padding with layout instead)*/ 
-/* Left Margin -> Add Right if you're using RTL*/ 
-.spacing_margin-left_s { 
-    margin-left: var(--space-s); 
-}
-.spacing_margin-left_m {
-    margin-left: var(--space-m);
-}
-.spacing_margin-left_l {
-    margin-left: var(--space-l);
-} 
-/* Horizonal Margin */ 
-.spacing_margin-h_s { 
-    margin-left: var(--space-s);
-    margin-right: var(--space-s);
-}
-.spacing_margin-h_m { 
-    margin-left: var(--space-m);
-    margin-right: var(--space-m);
-}
-.spacing_margin-h_l { 
-    margin-left: var(--space-l);
-    margin-right: var(--space-l);
-}
-/* Vertical Margin */ 
-.spacing_margin-h_s { 
-    margin-left: var(--space-s);
-    margin-right: var(--space-s);
-}
-.spacing_margin-h_m { 
-    margin-left: var(--space-m);
-    margin-right: var(--space-m);
-}
-.spacing_margin-h_l { 
-    margin-left: var(--space-l);
-    margin-right: var(--space-l);
-} 
-/** Note: in case of full margin combine horizontal and vertical */
-/*padding*/
-/* Left Padding -> Add Right if you're using RTL pages*/ 
-.spacing_pad-left_s { 
-    padding-left: var(--space-s); 
-}
-.spacing_pad-left_m {
-    padding-left: var(--space-m);
-}
-.spacing_pad-left_l {
-    padding-left: var(--space-l);
-} 
-/* Horizonal Padding */ 
-.spacing_pad-h_s { 
-    padding-left: var(--space-s);
-    padding-right: var(--space-s);
-}
-.spacing_pad-h_m { 
-    padding-left: var(--space-m);
-    padding-right: var(--space-m);
-}
-.spacing_pad-h_l { 
-    padding-left: var(--space-l);
-    padding-right: var(--space-l);
-}
-/* Vertical Padding */ 
-.spacing_pad-h_s { 
-    padding-left: var(--space-s);
-    padding-right: var(--space-s);
-}
-.spacing_pad-h_m { 
-    padding-left: var(--space-m);
-    padding-right: var(--space-m);
-}
-.spacing_pad-h_l { 
-    padding-left: var(--space-l);
-    padding-right: var(--space-l);
-} 
-/* Gaps for flex/grid parents */
-.gap-s  { gap: var(--space-s); }
-.gap-m  { gap: var(--space-m); }
-.gap-l  { gap: var(--space-l); }
+/*=============================================
+=            SPACING UTILITIES                =
+=============================================*/
+
+/*---------------------------------------------
+  ⚠️ Margin (not recommended -> use padding with layout instead)
+---------------------------------------------*/
+
+/* Left Margin -> Add Right if you're using RTL */
+.spacing_margin-left_s { margin-left: 0.5rem; }
+.spacing_margin-left_m { margin-left: 1rem; }
+.spacing_margin-left_l { margin-left: 1.5rem; }
+
+/* Right Margin -> Add Left if you're using RTL */
+.spacing_margin-right_s { margin-right: 0.5rem; }
+.spacing_margin-right_m { margin-right: 1rem; }
+.spacing_margin-right_l { margin-right: 1.5rem; }
+
+/* Top Margin */
+.spacing_margin-top_s { margin-top: 0.5rem; }
+.spacing_margin-top_m { margin-top: 1rem; }
+.spacing_margin-top_l { margin-top: 1.5rem; }
+
+/* Bottom Margin */
+.spacing_margin-bottom_s { margin-bottom: 0.5rem; }
+.spacing_margin-bottom_m { margin-bottom: 1rem; }
+.spacing_margin-bottom_l { margin-bottom: 1.5rem; }
+
+/* Horizontal Margin */
+.spacing_margin-h_s { margin-left: 0.5rem; margin-right: 0.5rem; }
+.spacing_margin-h_m { margin-left: 1rem; margin-right: 1rem; }
+.spacing_margin-h_l { margin-left: 1.5rem; margin-right: 1.5rem; }
+
+/* Vertical Margin */
+.spacing_margin-v_s { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.spacing_margin-v_m { margin-top: 1rem; margin-bottom: 1rem; }
+.spacing_margin-v_l { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+
+/* Full Margin (all sides) */
+.spacing_margin_s { margin: 0.5rem; }
+.spacing_margin_m { margin: 1rem; }
+.spacing_margin_l { margin: 1.5rem; }
+
+/*---------------------------------------------
+  🧩 Padding
+---------------------------------------------*/
+
+/* Left Padding -> Add Right if you're using RTL */
+.spacing_pad-left_s { padding-left: 0.5rem; }
+.spacing_pad-left_m { padding-left: 1rem; }
+.spacing_pad-left_l { padding-left: 1.5rem; }
+
+/* Right Padding -> Add Left if you're using RTL */
+.spacing_pad-right_s { padding-right: 0.5rem; }
+.spacing_pad-right_m { padding-right: 1rem; }
+.spacing_pad-right_l { padding-right: 1.5rem; }
+
+/* Top Padding */
+.spacing_pad-top_s { padding-top: 0.5rem; }
+.spacing_pad-top_m { padding-top: 1rem; }
+.spacing_pad-top_l { padding-top: 1.5rem; }
+
+/* Bottom Padding */
+.spacing_pad-bottom_s { padding-bottom: 0.5rem; }
+.spacing_pad-bottom_m { padding-bottom: 1rem; }
+.spacing_pad-bottom_l { padding-bottom: 1.5rem; }
+
+/* Horizontal Padding */
+.spacing_pad-h_s { padding-left: 0.5rem; padding-right: 0.5rem; }
+.spacing_pad-h_m { padding-left: 1rem; padding-right: 1rem; }
+.spacing_pad-h_l { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+/* Vertical Padding */
+.spacing_pad-v_s { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.spacing_pad-v_m { padding-top: 1rem; padding-bottom: 1rem; }
+.spacing_pad-v_l { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+
+/* Full Padding (all sides) */
+.spacing_pad_s { padding: 0.5rem; }
+.spacing_pad_m { padding: 1rem; }
+.spacing_pad_l { padding: 1.5rem; }
+
+/*---------------------------------------------
+  🧱 Gaps (for flex/grid parents)
+---------------------------------------------*/
+.gap-s { gap: 0.5rem; }
+.gap-m { gap: 1rem; }
+.gap-l { gap: 1.5rem; }

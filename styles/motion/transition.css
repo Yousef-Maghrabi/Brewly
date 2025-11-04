@@ -1,0 +1,53 @@
+/* =====================================
+   DBSS: Motion System — Transitions
+   ===================================== */
+
+/* ============================
+   1. Base Transition Utility
+   ============================ */
+.transition {
+  transition-property: all;
+  transition-duration: var(--duration-medium);
+  transition-timing-function: var(--easing-standard);
+}
+
+.transition_none {
+  transition: none !important;
+}
+
+/* ============================
+   2. Duration Utilities
+   ============================ */
+.transition_fast   { transition-duration: var(--duration-fast); }
+.transition_medium { transition-duration: var(--duration-medium); }
+.transition_slow   { transition-duration: var(--duration-slow); }
+
+/* ============================
+   3. Timing Function Utilities
+   ============================ */
+.transition_standard   { transition-timing-function: var(--easing-standard); }
+.transition_accelerate { transition-timing-function: var(--easing-accelerate); }
+.transition_decelerate { transition-timing-function: var(--easing-decelerate); }
+.transition_linear     { transition-timing-function: linear; }
+
+/* ============================
+   4. Property-Specific Transitions
+   ============================ */
+.transition_color {
+  transition-property: color, background-color, border-color, fill, stroke;
+}
+.transition_opacity {
+  transition-property: opacity;
+}
+.transition_transform {
+  transition-property: transform;
+}
+.transition_shadow {
+  transition-property: box-shadow;
+}
+.transition_border {
+  transition-property: border-color, border-width;
+}
+.transition_all {
+  transition-property: all;
+}

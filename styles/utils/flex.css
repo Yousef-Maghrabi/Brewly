@@ -1,5 +1,5 @@
 /* Direction */
-.flex-v {
+.flex-h {
   display: flex;
   flex-direction: row;
 }

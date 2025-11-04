@@ -16,7 +16,15 @@
 .text_weight-thick {
   font-weight: 700;
 }
-
+.text { 
+  color: var(--color-text-muted); 
+}
+.text-focus { 
+  color: var(--color-text-default);
+}
+.text-accent { 
+  color: var(--color-accent-default);
+}
 @media (min-width: var(--screen-s)) {
   .text_size-s {
     font-size: 1.4rem;
