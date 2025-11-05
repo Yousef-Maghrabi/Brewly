@@ -61,42 +61,107 @@ The site is divided into five core pages, each with specific content requirement
 
 ### 4. About Page
 
-* **Focus:** **Our Story, Your Brew.**
-* **Key Messages:** Our Mission (premium, accessible, enjoyable), Sustainability Promise (ethically sourced, eco-friendly), and The Brewly Experience (technology meets taste).
+# ☕ Brewly — Brew Better. Live Better.
 
-### 5. Contact Page
+Updated: 2025-11-05
 
-* **Headline:** "Let’s Talk Coffee."
-* **Contact Options:** Functional **Name, Email, Subject, Message** form.
-* **Alternative Info:** support@brewly.com, +1 (800) BREWLY, Brewly HQ, Seattle, WA.
+This README was regenerated after a repository-wide review focused on adding human-friendly maintenance headers, small non-breaking defensive tweaks in JS, and clarifying comments across styles and scripts. The edits are intentionally conservative: no UX-breaking changes were made.
+
+## What changed (brief)
+
+- Added top-of-file review headers to many HTML files and component/CSS files to help future maintainers understand intent and design-system linkage.
+- Added defensive DOM guards and small, non-breaking hardening to key scripts (loader, card, products listing, product page, header, responsive helpers).
+- Fixed a minor CSS syntax issue in `styles/components/card-list.css` discovered during the sweep.
+- Normalized backend-returned image paths in `scripts/lib/card.js` to avoid broken images when API returns relative paths.
+- This work is committed on branch `maintenance/add-headers-2025-11-05`.
+
+## Changelog (recent commits on branch `maintenance/add-headers-2025-11-05`)
+
+Latest commits (most recent first):
+
+- 1cec731 — docs(html): add review header to login and clarify products filter markup (non-breaking)
+- 2214c80 — docs(css): add human-friendly headers to component and effect styles (non-functional)
+- 79db6ec — docs: add comments and small defensive guards to core scripts (main, header, slider, responsive)
+- 9d31a97 — docs: add internal comments & small defensive tweaks for loader, card, productPage and products (non-breaking)
+- 68647d8 — chore: add review headers and minor defensive fixes (WIP) 2025-11-05
+
+If you want the full commit history for this branch, run:
+
+```
+git checkout maintenance/add-headers-2025-11-05
+git log --oneline
+```
+
+## Line-count (LOC) — files included: *.html, *.js, *.css, *.md, LICENSE
+
+Below is an automated per-file line count captured at the time of this update. Total lines: **5577**.
+
+| Lines | Path |
+| -----: | --- |
+| 517 | `index.html` |
+| 385 | `test.html` |
+| 353 | `styles/normalize.css` |
+| 287 | `contact/index.html` |
+| 283 | `styles/style-guide.md` |
+| 280 | `scripts/products.js` |
+| 271 | `login/index.html` |
+| 243 | `products/product/index.html` |
+| 204 | `styles/utils/sizing.css` |
+| 188 | `scripts/productPage.js` |
+| 180 | `styles/components/footer.css` |
+| 130 | `styles/components/input.css` |
+| 124 | `styles/tokens.css` |
+| 124 | `styles/components/card.css` |
+| 119 | `styles/components/header.css` |
+| 118 | `products/index.html` |
+| 104 | `styles/globals.css` |
+| 103 | `README.md` |
+| 94 | `styles/effects/gallery.css` |
+| 93 | `scripts/lib/slider.js` |
+| 91 | `styles/utils/position.css` |
+| 91 | `scripts/lib/card.js` |
+| 88 | `login/style.css` |
+| 88 | `styles/utils/spacing.css` |
+| 83 | `scripts/main.js` |
+| 71 | `styles/motion/transition.css` |
+| 71 | `scripts/lib/responsive.js` |
+| 70 | `styles/utils/layout.css` |
+| 66 | `styles/utils/text.css` |
+| 64 | `styles/components/button.css` |
+| 56 | `styles/components/card-list.css` |
+| 52 | `styles/components/customloader.css` |
+| 51 | `scripts/lib/loader.js` |
+| 51 | `styles/components/link.css` |
+| 50 | `styles/effects/innershadow.css` |
+| 47 | `styles/utils/grid.css` |
+| 41 | `styles/components/tabs.css` |
+| 41 | `scripts/header.js` |
+| 33 | `styles/utils/flex.css` |
+| 30 | `styles/components/skeleton.css` |
+| 26 | `styles/components/form.css` |
+| 23 | `scripts/lib/enterleft.js` |
+| 22 | `LICENSE` |
+| 22 | `scripts/lib/tabs.js` |
+| 19 | `styles/motion/enterleft.css` |
+| 18 | `styles/components/image.css` |
+| 12 | `styles/utils/radius.css` |
 
 ---
 
-## 🛠️ Installation and Setup
+How this LOC table was generated:
 
-### Steps
+```powershell
+Get-ChildItem -Path . -Recurse -Include *.html,*.js,*.css,*.md,LICENSE |
+	ForEach-Object { $c=(Get-Content $_.FullName -Raw -ErrorAction SilentlyContinue).Split("`n").Count; "$c`t$($_.FullName)" } |
+	Sort-Object -Descending
+```
 
-1.  **Clone the Repository**
+## Next steps & suggestions
 
-    Clone the repository using the following SSH URL:
-
-    ```bash
-    git clone git@github.com:Yousef-Maghrabi/Brewly.git
-    cd Brewly
-    ```
-
-2.  **Run Locally**
-
-    Open the `index.html` file in your preferred browser to view the project.
-
-    *Note: If you encounter issues fetching product data (Cross-Origin Resource Sharing or CORS errors) due to browser security restrictions on local files, you may need to run the project using a simple local web server (such as Python's `http.server` or a VS Code extension like Live Server).*
+- Run a quick visual smoke test (open `index.html`, `products/index.html`, and `products/product/index.html`) to confirm no visible regressions.
+- Consider adding a lightweight CI pipeline that runs HTML/CSS/JS linters and the LOC report on each PR.
+- If you'd like, I can open a PR from `maintenance/add-headers-2025-11-05` into `main` with these changes and include this README as the summary.
 
 ---
 
-## Notes
-
-This project aims to deliver a modern, production-ready front-end application built with **Vanilla HTML, CSS, and JavaScript** and styled using **Standard CSS**. The focus is on modular design, performance optimization, and adherence to accessibility standards.
-
-**Developed by:** Yousef El-Maghrabi
-
-**Thanks you for visiting my repo!**
+Summary: README regenerated and LOC table added. Total lines (selected file types): **5577**.
