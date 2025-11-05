@@ -59,7 +59,7 @@ import Card from "/scripts/lib/card.js";
             // Defensive checks for missing fields
             const title = product.title || "Unnamed Product";
             const image = product.imagePath
-              ? product.imagePath.replace("/public", "")
+              ? product.imagePath.replace("/public", "https://brewly-api.vercel.app/public")
               : "/assets/placeholder.webp";
             const price = product.price || "0.00";
             const id = modelKey;

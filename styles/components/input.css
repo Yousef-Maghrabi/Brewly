@@ -1,4 +1,3 @@
-
 /* Brewly — Reviewed: 2025-11-05 — Input component styles (tokens + states) */
 /* ============================================
     Component: Input
@@ -6,55 +5,54 @@
     ============================================ */
 
 .input {
-    display: inline-flex;
-    align-items: center;
-    width: 100%;
-    padding: var(--space-2) var(--space-3);
-    font-size: 1rem;
-    font-family: inherit;
-    color: var(--color-text-default);
-    background-color: var(--color-bg-surface);
-    border: var(--border-width-thin) solid var(--color-border-default);
-    border-radius: var(--radius-m);
-    transition:
-            border-color var(--duration-fast) var(--easing-standard),
-            box-shadow var(--duration-fast) var(--easing-standard),
-            background-color var(--duration-fast) var(--easing-standard);
-    outline: none;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--color-text-default);
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-border-default);
+  border-radius: var(--radius-m);
+  transition: border-color var(--duration-fast) var(--easing-standard),
+    box-shadow var(--duration-fast) var(--easing-standard),
+    background-color var(--duration-fast) var(--easing-standard);
+  outline: none;
 }
 
 /* =========================
    Interaction States
    ========================= */
 .input:hover {
-    border-color: var(--color-border-primary);
+  border-color: var(--color-border-primary);
 }
 
 .input:focus {
-    border-color: var(--color-primary-500);
-    box-shadow: 0 0 0 2px var(--color-primary-100);
-    background-color: var(--color-bg-default);
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 2px var(--color-primary-100);
+  background-color: var(--color-bg-default);
 }
 
 .input:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    background-color: var(--color-neutral-200);
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--color-neutral-200);
 }
 
 /* =========================
    Sizes
    ========================= */
 .input--sm {
-    padding: var(--space-1) var(--space-2);
-    font-size: 0.875rem;
-    border-radius: var(--radius-s);
+  padding: var(--space-1) var(--space-2);
+  font-size: 0.875rem;
+  border-radius: var(--radius-s);
 }
 
 .input--lg {
-    padding: var(--space-3) var(--space-4);
-    font-size: 1.125rem;
-    border-radius: var(--radius-l);
+  padding: var(--space-3) var(--space-4);
+  font-size: 1.125rem;
+  border-radius: var(--radius-l);
 }
 
 /* =========================
@@ -63,67 +61,69 @@
 
 /* Default (filled) */
 .input--filled {
-    background-color: var(--color-bg-surface);
-    border-color: var(--color-border-default);
+  background-color: var(--color-bg-surface);
+  border-color: var(--color-border-default);
 }
 
 /* Outlined */
 .input--outlined {
-    background-color: transparent;
-    border-color: var(--color-border-muted);
+  background-color: transparent;
+  border-color: var(--color-border-muted);
 }
 
 /* Subtle */
 .input--subtle {
-    background-color: var(--color-bg-default);
-    border-color: transparent;
-    box-shadow: inset 0 0 0 1px var(--color-border-default);
+  background-color: var(--color-bg-default);
+  border-color: transparent;
+  box-shadow: inset 0 0 0 1px var(--color-border-default);
 }
 
 /* Success / Danger / Warning */
 .input--success {
-    border-color: var(--color-success);
-    box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-success) 25%, transparent);
+  border-color: var(--color-success);
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--color-success) 25%, transparent);
 }
 
 .input--danger {
-    border-color: var(--color-danger);
-    box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-danger) 25%, transparent);
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-danger) 25%, transparent);
 }
 
 .input--warning {
-    border-color: var(--color-warning);
-    box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-warning) 25%, transparent);
+  border-color: var(--color-warning);
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--color-warning) 25%, transparent);
 }
 
 /* =========================
    Input Group (Addons)
    ========================= */
 .input-group {
-    display: flex;
-    align-items: stretch;
-    width: 100%;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
 }
 
 .input-group > .input {
-    flex: 1;
-    border-radius: 0;
+  flex: 1;
+  border-radius: 0;
 }
 
 .input-group > *:first-child {
-    border-top-left-radius: var(--radius-m);
-    border-bottom-left-radius: var(--radius-m);
+  border-top-left-radius: var(--radius-m);
+  border-bottom-left-radius: var(--radius-m);
 }
 
 .input-group > *:last-child {
-    border-top-right-radius: var(--radius-m);
-    border-bottom-right-radius: var(--radius-m);
+  border-top-right-radius: var(--radius-m);
+  border-bottom-right-radius: var(--radius-m);
 }
 
 /* =========================
    Placeholder
    ========================= */
 .input::placeholder {
-    color: var(--color-text-muted);
-    opacity: 1;
+  color: var(--color-text-muted);
+  opacity: 1;
 }

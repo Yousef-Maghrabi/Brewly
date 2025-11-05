@@ -139,9 +139,6 @@ let data = [];
   const category = document.getElementById("category");
   const brand = document.getElementById("brand");
   const searchBtn = document.getElementById("searchBtn");
-  // Defensive: if any of the filter UI pieces are missing, skip attaching handlers.
-  // This keeps the page functional when the filter bar is removed or rendered conditionally.
-  if (!form || !search || !category || !brand || !searchBtn) return;
   const getCategory = () => {
     let tmp = [];
     if (category.value !== "null") {

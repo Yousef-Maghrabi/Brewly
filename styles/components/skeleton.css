@@ -5,26 +5,32 @@
     Skeleton Loading Styles
     =============================== */
 .skeleton {
-    background-color: var(--color-bg-surface);
-    border-radius: var(--radius-m);
-    overflow: hidden;
-    position: relative;
-    animation: pulse 1.5s ease-in-out infinite;
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  position: relative;
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 .skeleton_box {
-    background-color: var(--color-neutral-300);
-    height: 220px;
-    width: 100%;
+  background-color: var(--color-neutral-300);
+  height: 220px;
+  width: 100%;
 }
 
 .skeleton_line {
-    background-color: var(--color-neutral-300);
-    margin-top: 0.5rem;
+  background-color: var(--color-neutral-300);
+  margin-top: 0.5rem;
 }
 
 @keyframes pulse {
-    0% { opacity: 0.6; }
-    50% { opacity: 1; }
-    100% { opacity: 0.6; }
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
 }

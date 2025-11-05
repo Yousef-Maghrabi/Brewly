@@ -7,84 +7,79 @@
         - Keep changes minimal: this header is informational only.
 */
 
-
 /* ============================================================
    1. Card Container
    ============================================================ */
 .card {
-    background-color: var(--color-bg-surface);
-    border: var(--border-width-thin) solid var(--color-border-default);
-    border-radius: var(--radius-m);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform var(--duration-medium) var(--easing-standard),
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-border-default);
+  border-radius: var(--radius-m);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-medium) var(--easing-standard),
     box-shadow var(--duration-medium) var(--easing-standard);
 }
 
 .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
-
 
 /* ============================================================
    2. Media / Image Area
    ============================================================ */
 .card_image {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .card_image img,
 .card_image video {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: transform var(--duration-medium) var(--easing-decelerate);
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform var(--duration-medium) var(--easing-decelerate);
 }
 
 .card:hover .card_image img,
 .card:hover .card_image video {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
-
 
 /* ============================================================
    3. Content Wrapper
    ============================================================ */
 .card_content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2, 0.75rem);
-    padding: var(--space-4, 1rem);
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 0.75rem);
+  padding: var(--space-4, 1rem);
+  flex-grow: 1;
 }
 
 .card_title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-text-primary);
-    line-height: 1.3;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.3;
 }
 
 .card_body {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
 }
-
 
 /* ============================================================
    4. Actions Area
    ============================================================ */
 
 .card_actions .btn {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
-
 
 /* ============================================================
    5. Variants
@@ -92,33 +87,32 @@
    Add contextual or style variants as needed.
    ============================================================ */
 .card_outline {
-    background: transparent;
-    border-color: var(--color-border-primary);
-    box-shadow: none;
+  background: transparent;
+  border-color: var(--color-border-primary);
+  box-shadow: none;
 }
 
 .card_flat {
-    box-shadow: none;
-    border-color: transparent;
+  box-shadow: none;
+  border-color: transparent;
 }
 
 .card_accent {
-    border-color: var(--color-accent-default);
-    box-shadow: 0 2px 8px rgba(255, 154, 46, 0.2);
+  border-color: var(--color-accent-default);
+  box-shadow: 0 2px 8px rgba(255, 154, 46, 0.2);
 }
-
 
 /* ============================================================
    6. Responsive Adjustments
    ============================================================ */
 @media (max-width: var(--screen-s)) {
-    .card_content {
-        padding: var(--space-3, 0.75rem);
-    }
-    .card_title {
-        font-size: 1.1rem;
-    }
-    .card_body {
-        font-size: 0.9rem;
-    }
+  .card_content {
+    padding: var(--space-3, 0.75rem);
+  }
+  .card_title {
+    font-size: 1.1rem;
+  }
+  .card_body {
+    font-size: 0.9rem;
+  }
 }

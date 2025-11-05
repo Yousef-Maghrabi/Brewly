@@ -77,20 +77,26 @@ loader.render();
  */
 function populateProductPage(data) {
   // --- Element Selectors for Page Content ---
-  const titleElement = document.querySelector(".layout_content h1");
-  const brandElement = document.querySelector(".layout_content p.text-accent");
-  const priceElement = document.querySelector(
-    '.layout_content p[style*="color: var(--color-success)"]'
-  );
-  const detailsContentElement = document.querySelector("#details-content p");
-  const featuresContentElement = document.querySelector(
-    "#features-content .flex-v"
-  );
-  const specsContentElement = document.querySelector("#specs-content .flex-v");
+  const titleElement = document.getElementById("product_title");
+  const brandElement = document.getElementById("product_brand");
+  const priceElement = document.getElementById("product_price");
+  const detailsContentElement = document.getElementById("product_details");
+  const featuresContentElement = document.getElementById("product_features");
+  const specsContentElement = document.getElementById("product_specs");
 
   // --- Populate Basic Product Info ---
   if (titleElement) titleElement.textContent = data.title;
-  if (brandElement) brandElement.textContent = data.brand || brand;
+  if (brandElement) {
+    if (data.imagePath.includes("ct")) {
+      brandElement.textContent = "Coffee Bean & Tea Leaf";
+    } else if (data.imagePath.includes("pmc")) {
+      brandElement.textContent = "Philips";
+    } else if (data.imagePath.includes("smc")) {
+      brandElement.textContent = "Saeco";
+    } else {
+      brandElement.textContent = "Brewly";
+    }
+  }
   if (priceElement) priceElement.textContent = `$${data.price}`;
   if (detailsContentElement) detailsContentElement.textContent = data.details;
 
@@ -120,7 +126,17 @@ function populateProductPage(data) {
   }
 
   // --- Initialize Image Gallery ---
-  initializeGallery(data.images);
+  const path = data.imagePath; // e.g. "/public/images/pmc01/01.webp"
+
+  const base = path.substring(0, path.lastIndexOf("/") + 1);
+  const ext = path.substring(path.lastIndexOf("."));
+  const images = [];
+
+  for (let i = 1; i <= 4; i++) {
+    const num = String(i).padStart(2, "0");
+    images.push(`https://brewly-api.vercel.app${base}${num}${ext}`);
+  }
+  initializeGallery(images);
 }
 
 /**

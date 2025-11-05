@@ -1,18 +1,16 @@
 /* Brewly — Reviewed: 2025-11-05 — Motion: enter-left helper (intersection-driven) */
 .m-enter_left {
-    position: relative;
-    left: -40px;            /* More noticeable initial offset */
-    opacity: 0;
-    transform: translateX(-20px); /* smoother motion */
-    transition:
-            left 1s cubic-bezier(0.25, 0.8, 0.25, 1),
-            opacity 1s ease,
-            transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-    will-change: transform, opacity;
+  position: relative;
+  left: -40px; /* More noticeable initial offset */
+  opacity: 0;
+  transform: translateX(-20px); /* smoother motion */
+  transition: left 1s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 1s ease,
+    transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform, opacity;
 }
 
 .m-enter_left.visible {
-    left: 0;
-    opacity: 1;
-    transform: translateX(0);
+  left: 0;
+  opacity: 1;
+  transform: translateX(0);
 }
