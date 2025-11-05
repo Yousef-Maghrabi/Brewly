@@ -1,7 +1,12 @@
+
+/* Brewly — Reviewed: 2025-11-05
+    Component: Form
+    Purpose: Shared form layout tokens and spacing helpers. Keep changes minimal.
+*/
 /* ============================================
-   Component: Form
-   Styles for form layout and elements.
-   ============================================ */
+    Component: Form
+    Styles for form layout and elements.
+    ============================================ */
 
 .form-group {
     margin-bottom: var(--space-4); /* 1rem */

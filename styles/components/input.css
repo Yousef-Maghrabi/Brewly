@@ -1,7 +1,9 @@
+
+/* Brewly — Reviewed: 2025-11-05 — Input component styles (tokens + states) */
 /* ============================================
-   Component: Input
-   Built on token system
-   ============================================ */
+    Component: Input
+    Built on token system
+    ============================================ */
 
 .input {
     display: inline-flex;

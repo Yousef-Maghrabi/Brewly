@@ -1,23 +1,11 @@
-/* ============================================================
-   Component — Card
-   ------------------------------------------------------------
-   Description:
-     A clean, flexible card component for displaying content
-     snippets like products, blog posts, or dashboard items.
-
-   Structure:
-     .card           — root container
-     .card_image     — optional image or media area
-     .card_content   — content wrapper
-     .card_title     — heading text
-     .card_body      — paragraph or details
-     .card_actions   — footer or buttons
-
-   Dependencies:
-     - tokens.css (colors, radius, spacing, duration, easing)
-     - utils/sizing.css (for width, height)
-     - utils/position.css (for overflow control)
-   ============================================================ */
+/*
+    Brewly — Reviewed: 2025-11-05
+    Component: Card
+    Purpose: Card component for small content blocks (products, posts, etc.).
+    Notes:
+        - Uses design tokens from styles/tokens.css.
+        - Keep changes minimal: this header is informational only.
+*/
 
 
 /* ============================================================

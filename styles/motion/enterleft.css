@@ -1,3 +1,4 @@
+/* Brewly — Reviewed: 2025-11-05 — Motion: enter-left helper (intersection-driven) */
 .m-enter_left {
     position: relative;
     left: -40px;            /* More noticeable initial offset */

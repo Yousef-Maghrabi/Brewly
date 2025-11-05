@@ -1,6 +1,9 @@
+/* Brewly — Reviewed: 2025-11-05 — Skeleton loading styles (visual-only)
+    Keep animations subtle and respectful of prefers-reduced-motion if added later.
+*/
 /* ===============================
-   Skeleton Loading Styles
-   =============================== */
+    Skeleton Loading Styles
+    =============================== */
 .skeleton {
     background-color: var(--color-bg-surface);
     border-radius: var(--radius-m);
