@@ -29,8 +29,20 @@ class Card {
       "img_container flex_h flex_align-center flex_justify-center w-full ratio-4-3 spacing_pad-v_s";
 
     const img = document.createElement("img");
-    img.src = "https://brewly-api.vercel.app/public" + this.image;
-    console.log("https://brewly-api.vercel.app/public" + this.image);
+    // Normalize image path returned by backend. The API sometimes returns
+    // relative paths that start with "/public/..." — in those cases we
+    // prefix them with the public host. If the path already looks like a
+    // full URL, leave it as-is.
+    let imgSrc = this.image || "";
+    try {
+      if (imgSrc.startsWith("/public")) {
+        imgSrc = "https://brewly-api.vercel.app" + imgSrc;
+      }
+    } catch (e) {
+      // defensive: if this.image isn't a string, fallback to a placeholder
+      imgSrc = "/assets/placeholder.webp";
+    }
+    img.src = imgSrc;
     img.alt = this.title;
     img.loading = "lazy";
     img.className = "img";
@@ -69,8 +81,8 @@ class Card {
     article.appendChild(imageWrapper);
     article.appendChild(content);
 
-    // Append to parent
-    this.parent.appendChild(article);
+  // Append to parent (assume valid parent supplied by caller)
+  if (this.parent && this.parent.appendChild) this.parent.appendChild(article);
   }
 }
 

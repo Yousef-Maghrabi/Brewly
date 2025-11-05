@@ -41,6 +41,10 @@ loader.render();
       : `https://brewly-api.vercel.app/api/machines/${brand}/${productId}`;
 
   // Fetch the data, handle success and error cases, and then populate the page.
+  // Note: we intentionally keep the fetch logic simple and user-friendly.
+  // The API returns either a coffee or a machine object. We display a
+  // loader while waiting, show a friendly error on failure, and populate
+  // the page on success.
   fetch(apiUrl)
     .then((response) => {
       if (!response.ok) {
@@ -153,6 +157,9 @@ function initializeGallery(images) {
     galleryImage.style.opacity = 0;
 
     // After the fade-out transition, change the image source and fade it in.
+    // We use a small timeout to allow the CSS opacity transition to run.
+    // This is intentionally lightweight – if you later change the CSS
+    // transition duration, update this value to match for a smooth swap.
     setTimeout(() => {
       galleryImage.src = images[index];
       galleryImage.style.opacity = 1;
