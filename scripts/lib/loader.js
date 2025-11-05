@@ -21,7 +21,8 @@ class Loader {
     this.parent.classList.add("layered");
 
     const loaderContainer = document.createElement("div");
-    loaderContainer.className = "flex-v gap-m flex_align-center flex_justify-center";
+    loaderContainer.className =
+      "flex-v gap-m flex_align-center flex_justify-center";
 
     // The spinner element (visual only)
     const loaderEle = document.createElement("div");

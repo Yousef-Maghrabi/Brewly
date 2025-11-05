@@ -8,9 +8,12 @@
 */
 document.addEventListener("DOMContentLoaded", () => {
   // Support a few common menu selector patterns used across pages
-  const hamburger = document.querySelector(".hamburger") || document.getElementById("menu__toggle");
+  const hamburger =
+    document.querySelector(".hamburger") ||
+    document.getElementById("menu__toggle");
   // the nav element might be #nav-menu or .menu__box in some templates
-  const navMenu = document.querySelector("#nav-menu") || document.querySelector(".menu__box");
+  const navMenu =
+    document.querySelector("#nav-menu") || document.querySelector(".menu__box");
 
   if (!hamburger || !navMenu) return;
 

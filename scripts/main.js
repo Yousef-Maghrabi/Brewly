@@ -6,18 +6,18 @@
 import Card from "/scripts/lib/card.js";
 
 {
-    /*
+  /*
       Brewly — Reviewed: 2025-11-05
       main.js — product grid renderer
       Notes:
       - Renders skeletons while fetching products.
       - Non-breaking: adds defensive guards to avoid runtime errors when DOM nodes are missing.
     */
-    document.addEventListener("DOMContentLoaded", () => {
-        const productsGrid = document.getElementById("productsGrid");
+  document.addEventListener("DOMContentLoaded", () => {
+    const productsGrid = document.getElementById("productsGrid");
 
-        // Defensive: if the products grid is not present, do nothing (this page may be used elsewhere)
-        if (!productsGrid) return;
+    // Defensive: if the products grid is not present, do nothing (this page may be used elsewhere)
+    if (!productsGrid) return;
 
     // === LOADING PLACEHOLDER ===
     function renderLoading(count = 4) {
@@ -46,8 +46,8 @@ import Card from "/scripts/lib/card.js";
         if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
         const data = await res.json();
 
-                // Clear skeletons (we replace the placeholder with real cards)
-                productsGrid.innerHTML = "";
+        // Clear skeletons (we replace the placeholder with real cards)
+        productsGrid.innerHTML = "";
 
         // The backend returns nested brand > model structure
         // Example: data = { philips: { pmc01: {...}, pmc02: {...} }, saoco: {...} }

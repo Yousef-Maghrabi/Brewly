@@ -81,8 +81,9 @@ class Card {
     article.appendChild(imageWrapper);
     article.appendChild(content);
 
-  // Append to parent (assume valid parent supplied by caller)
-  if (this.parent && this.parent.appendChild) this.parent.appendChild(article);
+    // Append to parent (assume valid parent supplied by caller)
+    if (this.parent && this.parent.appendChild)
+      this.parent.appendChild(article);
   }
 }
 
