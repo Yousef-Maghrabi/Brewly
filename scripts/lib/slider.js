@@ -1,6 +1,9 @@
 /*
-    Brewly — Reviewed: 2025-11-05
-    Gallery slider helper — preloads images and updates gallery safely.
+  Brewly — Reviewed: 2025-11-05
+  Gallery slider helper — preloads images and updates gallery safely.
+  Notes:
+  - Uses a small transition delay when swapping images to match CSS transitions.
+  - Keep the preloading strategy conservative to avoid heavy memory usage.
 */
 export default function init(images) {
   const d = document.querySelectorAll(".e-gallery_nav-dot");
@@ -63,6 +66,8 @@ export default function init(images) {
 
   const lr = document.querySelector(".e-gallery_nav-arrow_left");
   const rr = document.querySelector(".e-gallery_nav-arrow_right");
+  // Small constant so the timeout value is obvious and easy to tweak
+  const TRANSITION_DELAY = 200;
 
   // arrow controls
   lr?.addEventListener("click", () => {
@@ -81,6 +86,7 @@ export default function init(images) {
     const prev = document.querySelector(".e-gallery_nav-dot.open");
     if (prev) prev.classList.remove("open");
     if (d[i]) d[i].classList.add("open");
+    // small delay kept inside sfi preloader; call sfi to handle swapping
     sfi(i);
   }
 }

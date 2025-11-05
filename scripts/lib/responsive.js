@@ -8,6 +8,9 @@
 
 /* Brewly — Reviewed: 2025-11-05 — responsive.js
   Applies data-class-* attributes to elements based on screen size.
+  Notes:
+  - Elements declare data-class-s/m/l/xl attributes which map to dataset.classS/classM/... .
+  - This lightweight system intentionally replaces element.className (full replacement) to keep the source of truth in the data attributes.
 */
 const responsiveElems = document.querySelectorAll("[responsive]");
 

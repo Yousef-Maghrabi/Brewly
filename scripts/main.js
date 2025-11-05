@@ -6,8 +6,18 @@
 import Card from "/scripts/lib/card.js";
 
 {
-  document.addEventListener("DOMContentLoaded", () => {
-    const productsGrid = document.getElementById("productsGrid");
+    /*
+      Brewly — Reviewed: 2025-11-05
+      main.js — product grid renderer
+      Notes:
+      - Renders skeletons while fetching products.
+      - Non-breaking: adds defensive guards to avoid runtime errors when DOM nodes are missing.
+    */
+    document.addEventListener("DOMContentLoaded", () => {
+        const productsGrid = document.getElementById("productsGrid");
+
+        // Defensive: if the products grid is not present, do nothing (this page may be used elsewhere)
+        if (!productsGrid) return;
 
     // === LOADING PLACEHOLDER ===
     function renderLoading(count = 4) {
@@ -36,8 +46,8 @@ import Card from "/scripts/lib/card.js";
         if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
         const data = await res.json();
 
-        // Clear skeletons
-        productsGrid.innerHTML = "";
+                // Clear skeletons (we replace the placeholder with real cards)
+                productsGrid.innerHTML = "";
 
         // The backend returns nested brand > model structure
         // Example: data = { philips: { pmc01: {...}, pmc02: {...} }, saoco: {...} }
@@ -54,6 +64,7 @@ import Card from "/scripts/lib/card.js";
             const price = product.price || "0.00";
             const id = modelKey;
 
+            // Create card components — Card is responsible for DOM creation
             new Card(productsGrid, title, image, price, id);
           }
         }
