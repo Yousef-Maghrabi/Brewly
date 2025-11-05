@@ -1,4 +1,8 @@
 /* 1. Import foundation files (Tokens first!) */
+/*
+  Brewly Styles — Reviewed: 2025-11-05
+  Purpose: Global styles and reset composition. Tokens imported first.
+*/
 @import "./tokens.css";
 @import "./normalize.css";
 /*
@@ -24,15 +28,20 @@ html {
 
 /* 4. Body defaults */
 body {
-  font-family: var(--font-family-base, 'Inter', sans-serif);
+  font-family: var(--font-family-base, "Inter", sans-serif);
   color: var(--color-text-default);
   background-color: var(--color-bg-default);
   line-height: 1.5;
 }
 
 /* 5. Headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-heading, 'Poppins', sans-serif);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading, "Poppins", sans-serif);
   color: var(--color-neutral-900);
   font-weight: 600;
   line-height: 1.2;
@@ -50,14 +59,20 @@ a:hover {
 }
 
 /* 7. Images and media */
-img, picture, video, canvas {
+img,
+picture,
+video,
+canvas {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
 /* 8. Buttons and inputs */
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font: inherit;
 }
 
@@ -83,4 +98,6 @@ button, input, select, textarea {
   margin-inline: auto;
 }
 
-.none { display: none; }
+.none {
+  display: none;
+}

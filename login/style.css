@@ -1,0 +1,88 @@
+/* Minimal component CSS for the login page.
+   Uses design tokens (from styles/tokens.css) and utility classes.
+   Keeps styling light — primarily layout / spacing / small input affordances.
+*/
+
+:root {
+  /* fallback tokens if any token is missing in tokens.css */
+  --bg: var(--color-primary-50, #fbf7f3);
+  --card: var(--color-primary-100, #fffaf6);
+  --accent: var(--color-secondary-500, #8b5e3c);
+  --muted: var(--color-primary-400, #7a6b63);
+  --radius: var(--radius-l, 12px);
+  --shadow: var(--shadow-md, 0 6px 18px rgba(0,0,0,0.08));
+}
+
+/* Card container */
+.login-card {
+  background: #39393933;
+    backdrop-filter: blur(5px);
+  max-width: 1000px;
+  width: 96%;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* Left hero */
+.login-hero {
+  background: linear-gradient(180deg, rgba(139,94,60,0.06), rgba(139,94,60,0.02));
+  min-height: 320px;
+  padding: var(--space-5, 28px);
+}
+
+/* brand/logo */
+.brand-logo {
+  width: 92px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Auth panel spacing */
+.auth-panel {
+  padding: var(--space-5, 28px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Inputs — use tokens and utilities but provide minimal visual style here */
+.form-input {
+  border: 1px solid rgba(0,0,0,0.06);
+  background: transparent;
+  padding: var(--space-3, 10px) var(--space-3, 10px);
+  border-radius: var(--radius-m, 8px);
+  font-size: 1rem;
+  color: var(--color-primary-900, #2b1f1a);
+  outline: none;
+  transition: box-shadow .12s ease, border-color .12s ease;
+}
+
+.form-input:focus {
+  box-shadow: 0 4px 12px rgba(139,94,60,0.08);
+  border-color: var(--accent);
+}
+
+/* Buttons: reuse existing .btn--accent / .btn--link from components/button.css */
+
+/* Small responsive tweaks */
+@media (max-width: 720px) {
+  .login-card { width: 96%; }
+  .login-hero { min-height: 180px; }
+}
+
+/* Motion fallback if motion/transition.css not present */
+@keyframes brewly-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.motion-fade-in {
+  animation: brewly-fade-up .28s ease both;
+}
+
+/* Keep a subtle loading state for buttons if needed later */
+.btn--accent[aria-busy="true"] {
+  opacity: 0.9;
+  pointer-events: none;
+}

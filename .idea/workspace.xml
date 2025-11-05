@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="233d6c74-125e-4bac-bbb4-a4b1f9521baa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/contact/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/product/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/lib/loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/lib/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/lib/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/productPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/components/form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/components/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/components/input.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/components/tabs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Brewly.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Brewly.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/lib/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/lib/card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/components/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/components/button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/components/customloader.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/components/customloader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/utils/flex.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/utils/flex.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/utils/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/utils/layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/utils/radius.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/utils/radius.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/utils/sizing.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/utils/sizing.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/utils/text.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/utils/text.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Yousef-Maghrabi&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Yousef-Maghrabi/Brewly.git&quot;,
+    &quot;accountId&quot;: &quot;9836af26-d97b-49ca-8a76-1917ccd4383b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="351Yuw6ZGb3N8tN8i7PTeDqjMN6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-WS-252.23892.411" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="233d6c74-125e-4bac-bbb4-a4b1f9521baa" name="Changes" comment="" />
+      <created>1762279271692</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762279271692</updated>
+      <workItem from="1762279273147" duration="3142000" />
+      <workItem from="1762291182373" duration="17773000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

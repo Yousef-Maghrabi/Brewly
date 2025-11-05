@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- Brewly — Reviewed: 2025-11-05
+  Purpose: Product listing page. Keep JS deferred and use Loader + Product card components. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brewly | Products</title>
+    <link rel="stylesheet" href="/styles/globals.css" />
+    <link rel="stylesheet" href="/styles/utils/layout.css" />
+    <link rel="stylesheet" href="/styles/utils/flex.css" />
+    <link rel="stylesheet" href="/styles/utils/text.css" />
+    <link rel="stylesheet" href="/styles/utils/spacing.css" />
+    <link rel="stylesheet" href="/styles/utils/position.css" />
+    <link rel="stylesheet" href="/styles/utils/sizing.css" />
+    <link rel="stylesheet" href="/styles/utils//radius.css" />
+    <link rel="stylesheet" href="/styles/components/input.css" />
+    <link rel="stylesheet" href="/styles/components/link.css" />
+    <link rel="stylesheet" href="/styles/components/button.css" />
+    <link rel="stylesheet" href="/styles/components/card-list.css" />
+    <link rel="stylesheet" href="/styles/components/customloader.css" />
+    <link rel="stylesheet" href="/styles/motion/transition.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lucide-static@latest/font/lucide.css"
+    />
+
+    <script defer src="/scripts/lib/responsive.js"></script>
+      <script defer type="module" src="/scripts/lib/loader.js"></script>
+    <script defer type="module" src="/scripts/products.js"></script>
+  </head>
+  <body>
+    <div id="loader" class="custom-loader-container"></div>
+    <main class="layout_section">
+      <div class="layout_container-v_6 w-full .min-h-full spacing_pad-h_l">
+        <div
+          resposive
+          data-class-xl="layout_container-v_2 h-200"
+          data-class-s="layout_container-v_3 h-300"
+        >
+          <!--###########################-->
+          <!-- Start header -->
+          <div
+            class="flex-h flex_align-center flex_justify-between text_size-l"
+          >
+            <h1
+              responsive
+              data-class-xl="text_size-l text_weight-thick text-focus"
+              data-class-s="text_size-s text_weight-thick text-focus"
+            >
+              <span class="text-accent">Brewly</span> Products
+            </h1>
+            <a href="/index.html" class="text_size-s link">Home</a>
+          </div>
+          <!-- End header -->
+          <!--###########################-->
+          <!--###########################-->
+          <!-- Start filter bar  -->
+          <div
+            id="filterBar"
+            responsive
+            data-class-xl="layout_container-h_6 spacing_pad-v_l spacing_pad-h_l position-relative overflow-hidden gap-m h-100"
+            data-class-m="layout_container-v_2 spacing_pad-v_l position-relative overflow-hidden gap-m h-200"
+            data-class-s="layout_container-v_3 spacing_pad-v_l position-relative overflow-hidden gap-m rowspan-2 h-200"
+          >
+            <input
+              id="search"
+              responsive
+              data-class-m="input colspan-5 h-full"
+              type="search"
+              placeholder="Philips 4300 LatteGo..."
+              data-class-xl="input colspan-3 h-full"
+              data-class-s="input colspan-6 h-full"
+            />
+            <div
+              responsive
+              data-class-xl="w-full flex-h gap-m colspan-3"
+              data-class-m="w-full flex-h gap-m colspan-5"
+              data-class-s="w-full flex-h gap-m colspan-6"
+            >
+              <select class="input h-full w-1-2" id="category">
+                <option value="null">Choose Category...</option>
+                <option value="coffee" id="coffee">Coffee</option>
+                <option value="machines" id="machine">Machines</option>
+              </select>
+              <select class="input h-full w-1-2" id="brand">
+                <option value="null" default>Choose Brand...</option>
+              </select>
+
+              <div 
+                id="searchBtn"
+                role="button"
+                class="icon-search h-full ratio-1-1 btn-icon flex_align-center flex-h flex_justify-center radius-full transition" 
+              ></div>
+            </div>
+          </form>
+          <!-- End filter bar -->
+          <!--###########################-->
+        </div>
+        <!--###########################-->
+        <!-- Start result  -->
+        <div class="rowspan-5" id="productsSection">
+          <!-- Auto <div class="card_list transition">
+            <p class="card_list-title">Philips 4300 LatteGo</p>
+            <p class="card_list-price">$250</p>
+          </div> -->
+          <!-- <div class="flex-v gap-m flex_align-center flex_justify-center">
+            <div class="custom-loader"></div>
+            <p>Fetching Products...</p>
+          </div> -->
+        </div>
+        <!-- End result-->
+        <!--###########################-->
+      </div>
+    </main>
+  </body>
+</html>

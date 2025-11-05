@@ -1,0 +1,21 @@
+/* ============================================
+   Component: Form
+   Styles for form layout and elements.
+   ============================================ */
+
+.form-group {
+    margin-bottom: var(--space-4); /* 1rem */
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    color: var(--color-text-default);
+    margin-bottom: var(--space-2); /* 0.5rem */
+}
+
+/* Actions container for submit buttons */
+.form-actions {
+    margin-top: var(--space-5); /* 1.5rem */
+    display: flex;
+}

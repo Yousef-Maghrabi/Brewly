@@ -1,18 +1,22 @@
+/* Brewly — Reviewed: 2025-11-05 — Intersection observer helper for enter-left animation */
 document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll('.m-enter_left');
+  const elements = document.querySelectorAll(".m-enter_left");
 
-    if (!elements.length) return;
+  if (!elements.length) return;
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.2 // Trigger when 20% of element is visible
-    });
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2, // Trigger when 20% of element is visible
+    }
+  );
 
-    elements.forEach(el => observer.observe(el));
+  elements.forEach((el) => observer.observe(el));
 });

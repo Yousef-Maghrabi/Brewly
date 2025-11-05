@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brewly — Login</title>
+
+  <!-- Core styles / utilities from Brewly design system -->
+  <link rel="stylesheet" href="/styles/globals.css" />
+  <link rel="stylesheet" href="/styles/utils/flex.css" />
+  <link rel="stylesheet" href="/styles/utils/grid.css" />
+  <link rel="stylesheet" href="/styles/utils/text.css" />
+  <link rel="stylesheet" href="/styles/utils/sizing.css" />
+  <link rel="stylesheet" href="/styles/utils/radius.css" />
+  <link rel="stylesheet" href="/styles/utils/spacing.css" />
+  <link rel="stylesheet" href="/styles/utils/layout.css" />
+  <link rel="stylesheet" href="/styles/utils/position.css" />
+  <link rel="stylesheet" href="/styles/components/button.css" />
+  <link rel="stylesheet" href="/styles/motion/transition.css" />
+
+  <!-- Local component styles (minimal, only layout & tokens usage) -->
+  <link rel="stylesheet" href="/login/style.css" />
+
+  <!-- Optional icons (used for visual affordances only) -->
+  <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css" />
+
+  <!-- Small JS helpers used by the system (responsive + tabs conventions) -->
+  <script defer src="/scripts/lib/responsive.js"></script>
+  <script defer src="/scripts/lib/tabs.js"></script>
+</head>
+<body>
+
+  <main class="layout_section min-h-100vh flex_center">
+    <div
+      class="login-card grid_2 gap-l radius-l shadow padding-l motion-fade-in"
+      data-class-mobile="grid_1"
+      role="main"
+      aria-labelledby="auth-title"
+    >
+      <!-- Left: Visual / Illustration -->
+      <aside class="login-hero flex_center">
+        <div class="hero-content text-center spacing_pad-h_m">
+          <img src="/assets/logo.webp" alt="Brewly" class="brand-logo" />
+          <h2 class="text_size-l text weight-600 spacing_pad-v_s">Welcome to Brewly</h2>
+          <p class="text_size-s text-muted">Freshly brewed experience for your daily ritual.</p>
+        </div>
+      </aside>
+
+      <!-- Right: Auth forms -->
+      <section class="auth-panel spacing_pad-l_m spacing_pad-v_m">
+        <header class="flex-h flex_align-center flex_justify-space-between">
+          <h1 id="auth-title" class="text_size-m weight-600">Sign in or create an account</h1>
+        </header>
+
+        <!-- Tabs (uses the same tabs helper used elsewhere in the project) -->
+        <div id="auth-tabs" class="tabs-container spacing_pad-v_s" role="tablist" aria-label="Authentication">
+          <button
+            id="login-tab"
+            class="tab active"
+            data-content="login-content"
+            onclick="openTab('login-tab','auth-tabs','auth-contents')"
+            role="tab"
+            aria-selected="true"
+            aria-controls="login-content"
+          >Login</button>
+
+          <button
+            id="signup-tab"
+            class="tab"
+            data-content="signup-content"
+            onclick="openTab('signup-tab','auth-tabs','auth-contents')"
+            role="tab"
+            aria-selected="false"
+            aria-controls="signup-content"
+          >Sign Up</button>
+        </div>
+
+        <div id="auth-contents" class="tab_content-container">
+          <!-- Login Content -->
+          <div id="login-content" class="tab-content active" role="tabpanel" aria-labelledby="login-tab">
+            <form id="login-form" class="flex-v gap-m" onsubmit="return false;" novalidate>
+              <label class="flex-v gap-xs">
+                <span class="text_size-s">Email</span>
+                <input id="login-email" name="email" type="email" placeholder="you@brewly.com" class="form-input w-full" required aria-required="true" />
+              </label>
+
+              <label class="flex-v gap-xs">
+                <span class="text_size-s">Password</span>
+                <input id="login-password" name="password" type="password" placeholder="••••••••" class="form-input w-full" required aria-required="true" />
+              </label>
+
+              <div class="flex-h flex_align-center flex_justify-space-between">
+                <button class="btn--link text_size-s">Forgot password?</button>
+                <button type="submit" class="btn--accent radius-m">Sign in</button>
+              </div>
+
+              <div id="login-msg" class="text_size-s text-muted" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <!-- Sign Up Content -->
+          <div id="signup-content" class="tab-content" role="tabpanel" aria-labelledby="signup-tab" hidden>
+            <form id="signup-form" class="flex-v gap-m" onsubmit="return false;" novalidate>
+              <label class="flex-v gap-xs">
+                <span class="text_size-s">Email</span>
+                <input id="signup-email" name="email" type="email" placeholder="you@brewly.com" class="form-input w-full" required aria-required="true" />
+              </label>
+
+              <label class="flex-v gap-xs">
+                <span class="text_size-s">Password</span>
+                <input id="signup-password" name="password" type="password" placeholder="Create a password" class="form-input w-full" required aria-required="true" />
+              </label>
+
+              <label class="flex-v gap-xs">
+                <span class="text_size-s">Confirm Password</span>
+                <input id="signup-confirm" name="confirmPassword" type="password" placeholder="Confirm password" class="form-input w-full" required aria-required="true" />
+              </label>
+
+              <div class="flex-h flex_align-center flex_justify-end gap-s">
+                <button type="submit" class="btn--accent radius-m">Create account</button>
+              </div>
+
+              <div id="signup-msg" class="text_size-s text-muted" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Minimal script to toggle hidden panels in an accessible way (keeps markup hooks used by system tabs.js) -->
+  <script>
+    // Ensure tab panels have the hidden attribute toggled for accessibility when tabs.js isn't loaded yet.
+    (function () {
+      const tabs = document.querySelectorAll('#auth-tabs .tab');
+      function syncPanels() {
+        const container = document.getElementById('auth-contents');
+        if (!container) return;
+        tabs.forEach(btn => {
+          const contentId = btn.getAttribute('data-content');
+          const panel = document.getElementById(contentId);
+          if (!panel) return;
+          const isActive = btn.classList.contains('active');
+          panel.hidden = !isActive;
+          btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+      }
+      // initial
+      syncPanels();
+      // also observe tab mutations for live sync
+      const observer = new MutationObserver(syncPanels);
+      observer.observe(document.getElementById('auth-tabs'), { attributes: true, subtree: true, attributeFilter: ['class'] });
+    })();
+  </script>
+</body>
+</html>

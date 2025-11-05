@@ -1,6 +1,9 @@
+/* Brewly Motion: Reviewed 2025-11-05
+  Motion utilities for transitions used across the site.
+*/
 /* =====================================
-   DBSS: Motion System — Transitions
-   ===================================== */
+  DBSS: Motion System — Transitions
+  ===================================== */
 
 /* ============================
    1. Base Transition Utility
@@ -18,17 +21,31 @@
 /* ============================
    2. Duration Utilities
    ============================ */
-.transition_fast   { transition-duration: var(--duration-fast); }
-.transition_medium { transition-duration: var(--duration-medium); }
-.transition_slow   { transition-duration: var(--duration-slow); }
+.transition_fast {
+  transition-duration: var(--duration-fast);
+}
+.transition_medium {
+  transition-duration: var(--duration-medium);
+}
+.transition_slow {
+  transition-duration: var(--duration-slow);
+}
 
 /* ============================
    3. Timing Function Utilities
    ============================ */
-.transition_standard   { transition-timing-function: var(--easing-standard); }
-.transition_accelerate { transition-timing-function: var(--easing-accelerate); }
-.transition_decelerate { transition-timing-function: var(--easing-decelerate); }
-.transition_linear     { transition-timing-function: linear; }
+.transition_standard {
+  transition-timing-function: var(--easing-standard);
+}
+.transition_accelerate {
+  transition-timing-function: var(--easing-accelerate);
+}
+.transition_decelerate {
+  transition-timing-function: var(--easing-decelerate);
+}
+.transition_linear {
+  transition-timing-function: linear;
+}
 
 /* ============================
    4. Property-Specific Transitions

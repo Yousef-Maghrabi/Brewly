@@ -1,0 +1,286 @@
+<!--
+  Brewly — Reviewed: 2025-11-05
+  Contact page: kept layout/markup minimal and accessible. Forms are non-destructive (novalidate) and use existing utilities.
+-->
+<!-- contact-desktop.html
+    Desktop-only Contact Page for Brewly
+    - Uses existing Brewly utilities where helpful
+    - Adds scoped, minimal CSS overrides to ensure consistent desktop layout
+    - Responsive will be added later per your workflow
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Brewly — Contact</title>
+    <meta
+      name="description"
+      content="Contact Brewly — support, sales and partnerships."
+    />
+
+    <!-- Core styles (keeps your design system) -->
+    <link rel="stylesheet" href="/styles/globals.css" />
+    <link rel="stylesheet" href="/styles/utils/layout.css" />
+    <link rel="stylesheet" href="/styles/utils/spacing.css" />
+    <link rel="stylesheet" href="/styles/utils/flex.css" />
+    <link rel="stylesheet" href="/styles/utils/text.css" />
+    <link rel="stylesheet" href="/styles/components/button.css" />
+    <link rel="stylesheet" href="/styles/components/input.css" />
+    <link rel="stylesheet" href="/styles/components/form.css" />
+    <link rel="stylesheet" href="/styles/components/footer.css" />
+    <link rel="stylesheet" href="/styles/components/image.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lucide-static@latest/font/lucide.css"
+    />
+
+    <!-- Scripts for responsive attributes -->
+    <script defer src="/scripts/lib/responsive.js"></script>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header
+      responsive
+      data-class-xl="layout_container-h_4 h-100 position-relative"
+      role="banner"
+    >
+      <!-- Logo -->
+      <figure
+        responsive
+        data-class-xl="layout_content image_wrapper h-100 flex-h flex_align-center"
+      >
+        <img
+          loading="lazy"
+          responsive
+          data-class-xl="h-100 w-200 fit-contain"
+          src="/assets/logo.webp"
+          alt="Brewly logo"
+        />
+      </figure>
+
+      <!-- Navigation Links -->
+      <nav
+        responsive
+        data-class-xl="layout_content flex-h flex_justify-around flex_align-center colspan-2"
+        aria-label="Main navigation"
+      >
+        <a href="/index.html" responsive data-class-xl="link text_size-s"
+          >Home</a
+        >
+        <a href="#" responsive data-class-xl="link text_size-s">Products</a>
+        <a
+          href="/contact/index.html"
+          responsive
+          data-class-xl="link text_size-s text-accent"
+          aria-current="page"
+          >Contact</a
+        >
+      </nav>
+
+      <!-- Login Button -->
+      <div
+        responsive
+        data-class-xl="layout_content flex-h flex_justify-around flex_align-center"
+      >
+        <button
+          responsive
+          data-class-xl="btn--s btn--default text_size-s transition transition_medium transition_decelerate radius-m"
+        >
+          Login
+        </button>
+      </div>
+    </header>
+
+    <main responsive data-class-xl="container spacing_pad-v_l">
+      <!-- HERO (headline + description) -->
+      <section
+        responsive
+        data-class-xl="flex-v flex_align-center text-center spacing_margin-bottom_l"
+        aria-labelledby="contact-heading"
+      >
+        <h1
+          id="contact-heading"
+          responsive
+          data-class-xl="text_size-l text-focus"
+        >
+          Let’s Talk Coffee.
+        </h1>
+        <p responsive data-class-xl="text_size-s text w-3-4">
+          Whether you have questions about your order, need product advice, or
+          want to partner with us — we’d love to hear from you.
+        </p>
+      </section>
+
+      <!-- MAIN GRID: Form (left) + Contact Info (right) -->
+      <section
+        responsive
+        data-class-xl="layout_grid-2 gap-l"
+        aria-labelledby="form-heading"
+      >
+        <!-- FORM COLUMN -->
+        <div responsive data-class-xl="layout_content">
+          <h2
+            id="form-heading"
+            responsive
+            data-class-xl="text_size-m text-focus spacing_margin-bottom_m"
+          >
+            Send Us a Message
+          </h2>
+
+          <!-- NOTE: update 'action' to your backend endpoint when ready -->
+          <form id="contactForm" action="#" method="POST" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input
+                id="name"
+                name="name"
+                class="input"
+                type="text"
+                placeholder="Your name"
+                required
+                autocomplete="name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input
+                id="email"
+                name="email"
+                class="input"
+                type="email"
+                placeholder="you@example.com"
+                required
+                autocomplete="email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input
+                id="subject"
+                name="subject"
+                class="input"
+                type="text"
+                placeholder="How can we help?"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                class="input"
+                placeholder="Type your message..."
+                required
+                rows="5"
+              ></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--accent btn--m">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- IMAGE & DETAILS COLUMN -->
+        <div responsive data-class-xl="layout_content flex-v gap-m">
+          <div responsive data-class-xl="img_container ratio-4-3 radius-l">
+            <img
+              src="/assets/contact-beans.webp"
+              alt="Close-up of freshly roasted coffee beans"
+              responsive
+              data-class-xl="img fit-cover"
+              loading="lazy"
+            />
+          </div>
+          <aside
+            responsive
+            data-class-xl="spacing_pad_m"
+            aria-label="Alternative contact options"
+          >
+            <h3 responsive data-class-xl="text_size-m text-focus">
+              Contact Options
+            </h3>
+            <dl responsive data-class-xl="spacing_margin-top_m">
+              <dt responsive data-class-xl="text_weight-thick">Email</dt>
+              <dd>
+                <a class="link" href="mailto:support@brewly.com"
+                  >support@brewly.com</a
+                >
+              </dd>
+
+              <dt
+                responsive
+                data-class-xl="text_weight-thick spacing_margin-top_s"
+              >
+                Phone
+              </dt>
+              <dd>+1 (800) BREWLY</dd>
+
+              <dt
+                responsive
+                data-class-xl="text_weight-thick spacing_margin-top_s"
+              >
+                Location
+              </dt>
+              <dd>Brewly HQ, Seattle, WA</dd>
+            </dl>
+            <p responsive data-class-xl="text_size-s text spacing_margin-top_m">
+              Customer support: Mon–Fri, 9:00–18:00 PST
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+      responsive
+      data-class-xl="brewly-footer"
+      role="contentinfo"
+      aria-label="Brewly footer"
+    >
+      <!-- Your full footer content can be pasted here from index.html for consistency -->
+      <div responsive data-class-xl="brewly-footer__bottom">
+        <p responsive data-class-xl="brewly-footer__small">
+          © <span id="brewly-year"></span> Brewly. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Minimal client JavaScript: form UX (no backend yet) -->
+    <script>
+      // Your existing script for form handling and year update is great and can remain.
+      (function () {
+        const form = document.getElementById("contactForm");
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const message = form.message.value.trim();
+            if (!name || !email || !message) {
+              alert("Please fill name, email and message before continuing.");
+              return;
+            }
+            alert(
+              "Thanks — message sent (demo). We will contact you at " +
+                email +
+                "."
+            );
+            form.reset();
+          });
+        }
+        const yearEl = document.getElementById("brewly-year");
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+      })();
+    </script>
+  </body>
+</html>

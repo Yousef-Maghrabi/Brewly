@@ -1,3 +1,16 @@
+.custom-loader-container {
+    position: fixed;
+    height: 100dvh;
+    width: 100%;
+    display: none;
+    z-index: 1200;
+}
+.custom-loader-container.layered {
+    background-color: #1a1a1aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .custom-loader {
     width: 50px;
     height: 50px;

@@ -1,0 +1,242 @@
+<!-- Brewly — Reviewed: 2025-11-05 — Product detail page refactored to use external productPage.js and component CSS -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/globals.css" />
+    <link rel="stylesheet" href="/styles/utils/flex.css" />
+    <link rel="stylesheet" href="/styles/utils/text.css" />
+    <link rel="stylesheet" href="/styles/utils/sizing.css" />
+    <link rel="stylesheet" href="/styles/utils/radius.css" />
+    <link rel="stylesheet" href="/styles/utils/spacing.css" />
+    <link rel="stylesheet" href="/styles/utils/layout.css" />
+    <link rel="stylesheet" href="/styles/utils/position.css" />
+    <link rel="stylesheet" href="/styles/components/button.css" />
+    <link rel="stylesheet" href="/styles/components/tabs.css" />
+    <link rel="stylesheet" href="/styles/components/customloader.css" />
+    <link rel="stylesheet" href="/styles/effects/gallery.css" />
+    <link rel="stylesheet" href="/styles/motion/transition.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lucide-static@latest/font/lucide.css"
+    />
+    <script defer type="module" src="/scripts/lib/slider.js"></script>
+    <script defer src="/scripts/lib/responsive.js"></script>
+    <script defer src="/scripts/lib/tabs.js"></script>
+    <script defer type="module" src="/scripts/lib/loader.js"></script>
+    <script defer type="module" src="/scripts/productPage.js"></script>
+  </head>
+  <body>
+    <div id="loader" class="custom-loader-container"></div>
+    <div class="layout_section">
+      <div
+        class="layout_container-v_2 h-full w-full overflow-y-scroll spacing_pad-v_l"
+      >
+        <div
+          responsive
+          data-class-s="layout_container-v_2 h-full w-full"
+          data-class-m="layout_container-v_2 h-vh-100 w-full spacing_pad-h_l"
+          data-class-xl="layout_container-h_2 w-full"
+        >
+          <div class="e-gallery">
+            <div
+              class="position-relative overflow-hidden spacing_pad-v_s spacing_pad-h_s h-full"
+            >
+              <img
+                class="e-gallery_img w-full h-full"
+                src="/assets/logo.webp"
+                alt="gallery"
+                loading="lazy"
+              />
+            </div>
+            <div class="e-gallery_nav-container">
+              <div class="icon-chevron-left e-gallery_nav-arrow_left"></div>
+              <div class="e-gallery_nav-dot_container">
+                <div class="e-gallery_nav-dot open"></div>
+                <div class="e-gallery_nav-dot"></div>
+                <div class="e-gallery_nav-dot"></div>
+                <div class="e-gallery_nav-dot"></div>
+              </div>
+              <div class="icon-chevron-right e-gallery_nav-arrow_right"></div>
+            </div>
+          </div>
+          <div
+            responsive
+            data-class-xl="layout_container-v_6"
+            data-class-m="layout_container-v_4"
+          >
+            <div
+              class="layout_content flex-v flex_justify-center rowspan-4 spacing_pad-left_s"
+            >
+              <h1
+                class="text_size-l text spacing_pad-v_l"
+                responsive
+                data-class-xl="text_size-l text spacing_pad-v_l"
+                data-class-m="text_size-m text spacing_pad-v_l"
+              >
+                Philips LatteGo 4300
+              </h1>
+
+              <p
+                class="text_size-m text-accent spacing_pad-v_s"
+                responsive
+                data-class-xl="text_size-m text-accent spacing_pad-v_s"
+                data-class-m="text_size-s text-accent spacing_pad-v_s"
+              >
+                Philips
+              </p>
+
+              <p
+                class="text_size-s spacing_pad-v_s"
+                responsive
+                data-class-xl="text_size-s spacing_pad-v_s"
+                data-class-m="text_size-xs spacing_pad-v_s"
+                style="color: var(--color-success)"
+              >
+                $4400
+              </p>
+
+              <div class="flex-h gap-m">
+                <button
+                  class="w-200 radius-m transition btn--accent text_size-s flex-h flex_align-center flex_justify-center"
+                  responsive
+                  data-class-xl="w-200 radius-m transition btn--accent text_size-s flex-h flex_align-center flex_justify-center"
+                  data-class-m="w-200 radius-m transition btn--accent text_size-xs flex-h flex_align-center flex_justify-center"
+                >
+                  Add to Cart
+                </button>
+
+                <a
+                  href="/"
+                  class="w-100 radius-m transition btn--link text_size-s flex-h flex_align-center flex_justify-center"
+                  responsive
+                  data-class-xl="w-100 radius-m transition btn--link text_size-s flex-h flex_align-center flex_justify-center"
+                  data-class-m="w-100 radius-m transition btn--link text_size-xs flex-h flex_align-center flex_justify-center"
+                >
+                  Home
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="layout_content flex-v">
+          <div class="tabs-container" id="tabs-container">
+            <button
+              onclick="openTab('details-tab', 'tabs-container', 'tabs-content-container')"
+              class="tab active"
+              id="details-tab"
+              data-content="details-content"
+            >
+              Details
+            </button>
+            <button
+              onclick="openTab('features-tab', 'tabs-container', 'tabs-content-container')"
+              class="tab"
+              id="features-tab"
+              data-content="features-content"
+            >
+              Features
+            </button>
+            <button
+              onclick="openTab('specs-tab', 'tabs-container', 'tabs-content-container')"
+              class="tab"
+              id="specs-tab"
+              data-content="specs-content"
+            >
+              Specs
+            </button>
+          </div>
+          <div class="tab_content-container" id="tabs-content-container">
+            <div class="tab-content active" id="details-content">
+              <p
+                class="text_size-s"
+                responsive
+                data-class-xl="text_size-s"
+                data-class-m="text_size-xs"
+              ></p>
+            </div>
+            <div class="tab-content" id="features-content">
+              <div class="flex-v gap-l">
+                <div
+                  responsive
+                  data-class-xl="text_size-s flex-h flex_align-center"
+                  data-class-s="text_size-xs flex-h flex_align-center"
+                >
+                  <span
+                    class="icon-rocket flex-h icon-s spacing_pad-h_s text-accent"
+                  ></span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Velit, aperiam!
+                </div>
+                <div
+                  responsive
+                  data-class-xl="text_size-s flex-h flex_align-center"
+                  data-class-s="text_size-xs flex-h flex_align-center"
+                >
+                  <span
+                    class="icon-rocket flex-h icon-s spacing_pad-h_s text-accent"
+                  ></span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Velit, aperiam!
+                </div>
+                <div
+                  responsive
+                  data-class-xl="text_size-s flex-h flex_align-center"
+                  data-class-s="text_size-xs flex-h flex_align-center"
+                >
+                  <span
+                    class="icon-rocket flex-h icon-s spacing_pad-h_s text-accent"
+                  ></span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Velit, aperiam!
+                </div>
+              </div>
+            </div>
+            <div class="tab-content" id="specs-content">
+              <div class="flex-v gap-l">
+                <div
+                  class="text_size-s flex-h flex_align-center"
+                  responsive
+                  data-class-xl="text_size-s flex-h flex_align-center"
+                  data-class-m="text_size-xs flex-h flex_align-center"
+                >
+                  <span
+                    class="icon-sparkle flex-h icon-s spacing_pad-h_s text-accent"
+                  ></span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Velit, aperiam!
+                </div>
+                <div
+                  class="text_size-s flex-h flex_align-center"
+                  responsive
+                  data-class-xl="text_size-s flex-h flex_align-center"
+                  data-class-m="text_size-xs flex-h flex_align-center"
+                >
+                  <span
+                    class="icon-sparkle flex-h icon-s spacing_pad-h_s text-accent"
+                  ></span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Velit, aperiam!
+                </div>
+                <div
+                  class="text_size-s flex-h flex_align-center"
+                  responsive
+                  data-class-xl="text_size-s flex-h flex_align-center"
+                  data-class-m="text_size-xs flex-h flex_align-center"
+                >
+                  <span
+                    class="icon-sparkle flex-h icon-s spacing_pad-h_s text-accent"
+                  ></span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Velit, aperiam!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

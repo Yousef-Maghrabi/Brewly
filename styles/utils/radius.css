@@ -8,5 +8,5 @@
     border-radius: var(--radius-l);;
 }
 .radius-full { 
-    border-radius: var(--radius-full);;
+    border-radius: 50%;
 }

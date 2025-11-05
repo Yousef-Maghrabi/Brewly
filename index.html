@@ -1,12 +1,20 @@
 <!DOCTYPE html>
+<!--
+    Brewly — Reviewed: 2025-11-05
+    Purpose: Lightweight header added for maintainers. File checked for production readiness
+    Notes: Keep this page linked to the design system (tokens/utilities). Avoid changing markup structure.
+-->
 <html lang="en">
-<head>
+  <head>
     <!-- =========================================
          🏗️  META & HEAD CONFIGURATION
     ========================================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Discover premium coffee blends and machines at Brewly. Brew better, live better." />
+    <meta
+      name="description"
+      content="Discover premium coffee blends and machines at Brewly. Brew better, live better."
+    />
     <meta name="theme-color" content="#1f1f1f" />
     <title>Brewly | Home</title>
 
@@ -14,7 +22,10 @@
          🎨  GLOBAL & UTILITY STYLES
     ========================================== -->
     <link rel="stylesheet" href="styles/globals.css" />
-    <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lucide-static@latest/font/lucide.css"
+    />
 
     <!-- Utility Modules -->
     <link rel="stylesheet" href="styles/utils/layout.css" />
@@ -34,6 +45,7 @@
     <link rel="stylesheet" href="styles/components/skeleton.css" />
     <link rel="stylesheet" href="styles/components/customloader.css" />
     <link rel="stylesheet" href="styles/components/footer.css" />
+    <link rel="stylesheet" href="styles/components/header.css" />
 
     <!-- Motion / Effects -->
     <link rel="stylesheet" href="styles/motion/transition.css" />
@@ -49,229 +61,456 @@
     <script defer type="module" src="scripts/main.js"></script>
     <script defer src="scripts/lib/enterleft.js"></script>
     <script defer src="scripts/lib/responsive.js"></script>
-</head>
+    <script defer src="scripts/header.js"></script>
+  </head>
 
-<body>
-<!-- =========================================
+  <body>
+    <!-- =========================================
      🌐 HEADER / NAVIGATION
 ========================================== -->
-<header responsive data-class-xl="layout_container-h_4 h-100 position-relative overflow-hidden" role="banner">
-    <!-- Logo -->
-    <figure responsive data-class-xl="layout_content image_wrapper h-100">
-        <img
-                loading="lazy"
-                responsive
-                data-class-xl="position-absolute fit-contain h-100 w-200"
-                src="/assets/logo.webp"
-                alt="Brewly logo"
-        />
-    </figure>
+    <!-- HEADER -->
+    <header role="banner">
+      <!-- ===== Large Screen Header ===== -->
+      <div
+        class="header-xl"
+        responsive
+        data-class-xl="layout_container-h_4 h-100 position-relative overflow-hidden"
+        data-class-m="hidden"
+        data-class-s="hidden"
+      >
+        <!-- Logo -->
+        <figure responsive data-class-xl="layout_content image_wrapper h-100">
+          <img
+            loading="lazy"
+            responsive
+            data-class-xl="position-absolute fit-contain h-100 w-200"
+            src="/assets/logo.webp"
+            alt="Brewly logo"
+          />
+        </figure>
 
-    <!-- Navigation Links -->
-    <nav responsive data-class-xl="layout_content flex-h flex_justify-around flex_align-center colspan-2" aria-label="Main navigation">
-        <a href="#" responsive data-class-xl="link text_size-s">Home</a>
-        <a href="#" responsive data-class-xl="link text_size-s">Contact</a>
-        <a href="#" responsive data-class-xl="link text_size-s">Products</a>
-    </nav>
-
-    <!-- Login Button -->
-    <div responsive data-class-xl="layout_content flex-h flex_justify-around flex_align-center">
-        <button
-                responsive
-                data-class-xl="btn--s btn--default text_size-s transition transition_medium transition_decelerate radius-m"
+        <!-- Navigation -->
+        <nav
+          responsive
+          data-class-xl="layout_content flex-h flex_justify-around flex_align-center colspan-2"
+          aria-label="Main navigation"
         >
-            Login
-        </button>
-    </div>
-</header>
+          <a href="/" responsive data-class-xl="link text_size-s">Home</a>
+          <a href="/contact" responsive data-class-xl="link text_size-s"
+            >Contact</a
+          >
+          <a href="/products" responsive data-class-xl="link text_size-s"
+            >Products</a
+          >
+        </nav>
 
-<!-- =========================================
+        <!-- Login -->
+        <div
+          responsive
+          data-class-xl="layout_content flex-h flex_justify-around flex_align-center"
+        >
+          <button
+            responsive
+            data-class-xl="btn--s btn--default text_size-s transition transition_medium transition_decelerate radius-m"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+
+      <!-- ===== Small Screen Hamburger Header ===== -->
+      <div
+        class="hamburger-menu"
+        responsive
+        data-class-xl="hidden"
+        data-class-m="block"
+        data-class-s="block"
+      >
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+
+        <ul class="menu__box">
+          <img
+            src="/assets/logo.webp"
+            height="75px"
+            width="100px"
+            alt="Brewly Logo"
+            class="fit-contain top-0 position-absolute"
+          />
+          <li><a class="menu__item" href="/">Home</a></li>
+          <li><a class="menu__item" href="/products">Products</a></li>
+          <li><a class="menu__item" href="/contact">Contact us</a></li>
+          <li><a class="menu__item" href="/login">Join</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="spacing_margin-bottom_l"></div>
+
+    <!-- =========================================
      ☕ HERO SECTION
 ========================================== -->
-<main>
-    <section responsive data-class-xl="layout_section layout_container-h_2" id="hero">
-        <div responsive data-class-xl="layout_container-h_2 h-vh-100" data-class-m="layout_container-v_2">
-
-            <!-- Hero Text Content -->
-            <div responsive data-class-xl="layout_container-v_3" data-class-m="layout_container-v_2 layout_grid-order_2">
-                <div responsive data-class-xl="layout_spacing" data-class-m="none"></div>
-
-                <div responsive data-class-xl="layout_content spacing_pad-left_m flex-v flex_justify-center">
-                    <p responsive data-class-xl="text_size-l text-focus">
-                        Brew Better<span class="text-accent">.</span> Live Better<span class="text-accent">.</span>
-                    </p>
-                    <p responsive data-class-xl="text_size-s text">
-                        Discover premium coffee blends and top-of-the-line machines designed to elevate your daily brew.
-                    </p>
-                </div>
-
-                <div responsive data-class-xl="layout_content spacing_pad-left_m spacing_pad-top_l">
-                    <button responsive data-class-xl="btn btn--s btn--accent text_size-m radius-m transition transition_medium transition_accelerate">
-                        Explore Machines
-                    </button>
-                </div>
-            </div>
-
-            <!-- Hero Media -->
-            <div responsive data-class-xl="layout_content flex_align-center flex_justify-center flex-v">
-                <div responsive data-class-xl="effect-inner_shadow_container">
-                    <video
-                            responsive
-                            data-class-xl="effect-inner_shadow_media"
-                            src="/assets/b.webm"
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                    ></video>
-                    <div responsive data-class-xl="effect-inner_shadow_layer"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================
-         🛍️ FEATURED PRODUCTS
-    ========================================== -->
-    <section responsive data-class-xl="layout_section" id="productsSection">
-        <h2 responsive data-class-xl="w-full flex-h flex_align-center flex_justify-center text_size-l spacing_pad-v_l text-focus">
-            Featured Products
-        </h2>
-
-        <div responsive data-class-xl="layout_container-h_6" data-class-l="layout_container-h_4">
-            <div responsive data-class-xl="layout_spacing"></div>
-
-            <!-- Dynamic products grid (JS populated) -->
+    <main>
+      <section
+        responsive
+        data-class-xl="layout_section layout_container-h_2"
+        id="hero"
+      >
+        <div
+          responsive
+          data-class-xl="layout_container-h_2 h-vh-100"
+          data-class-m="layout_container-v_2 spacing_margin-top_l"
+        >
+          <!-- Hero Text Content -->
+          <div
+            responsive
+            data-class-xl="layout_container-v_3"
+            data-class-m="layout_container-v_2 layout_grid-order_2"
+          >
             <div
-                    responsive
-                    data-class-xl="layout_grid-auto-300 colspan-4 gap-l align layout_grid-child_align_center layout_grid-child_justify_center"
-                    id="productsGrid"
+              responsive
+              data-class-xl="layout_spacing"
+              data-class-m="none"
             ></div>
 
-            <div responsive data-class-xl="layout_spacing"></div>
-        </div>
-    </section>
+            <div
+              responsive
+              data-class-xl="layout_content spacing_pad-left_m flex-v flex_justify-center"
+            >
+              <p responsive data-class-xl="text_size-l text-focus">
+                Brew Better<span class="text-accent">.</span> Live Better<span
+                  class="text-accent"
+                  >.</span
+                >
+              </p>
+              <p responsive data-class-xl="text_size-s text">
+                Discover premium coffee blends and top-of-the-line machines
+                designed to elevate your daily brew.
+              </p>
+            </div>
 
-    <!-- =========================================
+            <div
+              responsive
+              data-class-xl="layout_content spacing_pad-left_m spacing_pad-top_l"
+            >
+              <button
+                responsive
+                data-class-xl="btn btn--s btn--accent text_size-m radius-m transition transition_medium transition_accelerate"
+              >
+                Explore Machines
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Media -->
+          <div
+            responsive
+            data-class-xl="layout_content flex_align-center flex_justify-center flex-v"
+          >
+            <div responsive data-class-xl="effect-inner_shadow_container">
+              <video
+                responsive
+                data-class-xl="effect-inner_shadow_media"
+                src="/assets/b.webm"
+                autoplay
+                muted
+                loop
+                playsinline
+              ></video>
+              <div responsive data-class-xl="effect-inner_shadow_layer"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+         🛍️ FEATURED PRODUCTS
+    ========================================== -->
+      <section responsive data-class-xl="layout_section" id="productsSection">
+        <h2
+          responsive
+          data-class-xl="w-full flex-h flex_align-center flex_justify-center text_size-l spacing_pad-v_l text-focus"
+        >
+          Featured Products
+        </h2>
+
+        <div
+          responsive
+          data-class-xl="layout_container-h_6"
+          data-class-l="layout_container-h_4"
+        >
+          <div responsive data-class-xl="layout_spacing"></div>
+
+          <!-- Dynamic products grid (JS populated) -->
+          <div
+            responsive
+            data-class-xl="layout_grid-auto-300 colspan-4 gap-l align layout_grid-child_align_center layout_grid-child_justify_center"
+            id="productsGrid"
+          ></div>
+
+          <div responsive data-class-xl="layout_spacing"></div>
+        </div>
+      </section>
+
+      <!-- =========================================
          🌱 WHY BREWLY SECTION
     ========================================== -->
-    <section responsive data-class-xl="layout_section flex-v flex_align-center flex_justify-center h-vh-50" id="why-brewly">
+      <section
+        responsive
+        data-class-xl="layout_section flex-v flex_align-center flex_justify-center h-vh-50"
+        id="why-brewly"
+      >
         <div responsive data-class-xl="layout_container-v_4">
-            <div responsive data-class-xl="layout_spacing"></div>
+          <div responsive data-class-xl="layout_spacing"></div>
 
-            <div responsive data-class-xl="layout_content flex-v flex_justify-around flex_align-center rowspan-2">
-                <h2 responsive data-class-xl="flex-h flex_justify-center flex_align-center text_size-l w-full text-focus m-enter_left text_weight-thick">
-                    Why Brewly?
-                </h2>
+          <div
+            responsive
+            data-class-xl="layout_content flex-v flex_justify-around flex_align-center rowspan-2"
+          >
+            <h2
+              responsive
+              data-class-xl="flex-h flex_justify-center flex_align-center text_size-l w-full text-focus m-enter_left text_weight-thick"
+            >
+              Why Brewly?
+            </h2>
 
-                <div responsive data-class-xl="flex-v spacing_pad-h_l w-1-2 gap-l spacing_margin-top_l" data-class-m="flex-v spacing_pad-h_l w-full gap-l spacing_margin-top_l">
-                    <!-- Feature List -->
-                    <div responsive data-class-xl="flex-h flex_align-center m-enter_left">
-                        <div responsive data-class-xl="icon-circle-star text-accent text_size-m spacing_pad-h_m"></div>
-                        <p responsive data-class-xl="text_size-m text-focus text_weight-thin" data-class-s="text_size-s">
-                            Freshly roasted coffee, sourced sustainably.
-                        </p>
-                    </div>
+            <div
+              responsive
+              data-class-xl="flex-v spacing_pad-h_l w-full gap-l spacing_margin-top_l"
+              data-class-m="flex-v spacing_pad-h_l w-full gap-l spacing_margin-top_l"
+            >
+              <!-- Feature List -->
+              <div
+                responsive
+                data-class-xl="flex-h flex_align-center m-enter_left"
+              >
+                <div
+                  responsive
+                  data-class-xl="icon-circle-star text-accent text_size-m spacing_pad-h_m"
+                ></div>
+                <p
+                  responsive
+                  data-class-xl="text_size-m text-focus text_weight-thin"
+                  data-class-s="text_size-s"
+                >
+                  Freshly roasted coffee, sourced sustainably.
+                </p>
+              </div>
 
-                    <div responsive data-class-xl="flex-h flex_align-center m-enter_left">
-                        <div responsive data-class-xl="icon-circle-star text-accent text_size-m spacing_pad-h_m"></div>
-                        <p responsive data-class-xl="text_size-m text-focus text_weight-thin" data-class-s="text_size-s">
-                            High-performance machines for home or business.
-                        </p>
-                    </div>
+              <div
+                responsive
+                data-class-xl="flex-h flex_align-center m-enter_left"
+              >
+                <div
+                  responsive
+                  data-class-xl="icon-circle-star text-accent text_size-m spacing_pad-h_m"
+                ></div>
+                <p
+                  responsive
+                  data-class-xl="text_size-m text-focus text_weight-thin"
+                  data-class-s="text_size-s"
+                >
+                  High-performance machines for home or business.
+                </p>
+              </div>
 
-                    <div responsive data-class-xl="flex-h flex_align-center m-enter_left">
-                        <div responsive data-class-xl="icon-circle-star text-accent text_size-m spacing_pad-h_m"></div>
-                        <p responsive data-class-xl="text_size-m text-focus text_weight-thin" data-class-s="text_size-s">
-                            Hassle-free delivery and support.
-                        </p>
-                    </div>
-                </div>
+              <div
+                responsive
+                data-class-xl="flex-h flex_align-center m-enter_left"
+              >
+                <div
+                  responsive
+                  data-class-xl="icon-circle-star text-accent text_size-m spacing_pad-h_m"
+                ></div>
+                <p
+                  responsive
+                  data-class-xl="text_size-m text-focus text_weight-thin"
+                  data-class-s="text_size-s"
+                >
+                  Hassle-free delivery and support.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <div responsive data-class-xl="layout_spacing"></div>
+          <div responsive data-class-xl="layout_spacing"></div>
         </div>
-    </section>
+      </section>
 
-    <!-- =========================================
+      <!-- =========================================
          📩 JOIN BREWLY SECTION
     ========================================== -->
-    <section responsive data-class-xl="layout_section flex-v flex_align-center flex_justify-center h-vh-50" id="join-brewly">
+      <section
+        responsive
+        data-class-xl="layout_section flex-v flex_align-center flex_justify-center h-vh-50"
+        id="join-brewly"
+      >
         <div responsive data-class-xl="layout_container-v_4 h-vh-50">
-            <div responsive data-class-xl="layout_spacing"></div>
+          <div responsive data-class-xl="layout_spacing"></div>
 
-            <div responsive data-class-xl="layout_content flex-v flex_justify-around flex_align-center rowspan-2">
-                <h2 responsive data-class-xl="flex-h flex_justify-center flex_align-center text_size-l w-full text-focus m-enter_left text_weight-thick">
-                    Join Brewly!
-                </h2>
+          <div
+            responsive
+            data-class-xl="layout_content flex-v flex_justify-around flex_align-center rowspan-2"
+          >
+            <h2
+              responsive
+              data-class-xl="flex-h flex_justify-center flex_align-center text_size-l w-full text-focus m-enter_left text_weight-thick"
+            >
+              Join Brewly!
+            </h2>
 
-                <div responsive data-class-xl="flex-v flex_justify-center flex_align-center w-full gap-l">
-                    <p responsive data-class-xl="text-focus m-enter_left text_weight-thin text_size-s spacing_pad-h_l">
-                        Subscribe for exclusive offers, brewing tips, and early access to new releases.
-                    </p>
-                    <a href="#" responsive data-class-xl="text_size-s btn--m btn--accent text-focus radius-m">Login</a>
-                </div>
+            <div
+              responsive
+              data-class-xl="flex-v flex_justify-center flex_align-center w-full gap-l"
+            >
+              <p
+                responsive
+                data-class-xl="text-focus m-enter_left text_weight-thin text_size-s spacing_pad-h_l"
+              >
+                Subscribe for exclusive offers, brewing tips, and early access
+                to new releases.
+              </p>
+              <a
+                href="#"
+                responsive
+                data-class-xl="text_size-s btn--m btn--accent text-focus radius-m"
+                >Login</a
+              >
             </div>
+          </div>
 
-            <div responsive data-class-xl="layout_spacing"></div>
+          <div responsive data-class-xl="layout_spacing"></div>
         </div>
-    </section>
-</main>
+      </section>
+    </main>
 
-<!-- =========================================
+    <!-- =========================================
      🦶 FOOTER
 ========================================== -->
-<footer responsive data-class-xl="brewly-footer" role="contentinfo" aria-label="Brewly footer">
-    <div responsive data-class-xl="brewly-footer__inner">
-
+    <footer
+      responsive
+      data-class-xl="brewly-footer"
+      role="contentinfo"
+      aria-label="Brewly footer"
+    >
+      <div responsive data-class-xl="brewly-footer__inner">
         <!-- Brand / Tagline -->
         <div responsive data-class-xl="brewly-footer__brand">
-            <a href="/" responsive data-class-xl="brewly-footer__logo-link" aria-label="Brewly home">
-                <img src="/assets/logo.webp" alt="Brewly logo" responsive data-class-xl="brewly-footer__logo" loading="lazy" />
-            </a>
-            <p responsive data-class-xl="brewly-footer__tag">Brew Better. <span class="text-accent">Live Better</span>.</p>
+          <a
+            href="/"
+            responsive
+            data-class-xl="brewly-footer__logo-link"
+            aria-label="Brewly home"
+          >
+            <img
+              src="/assets/logo.webp"
+              alt="Brewly logo"
+              responsive
+              data-class-xl="brewly-footer__logo"
+              loading="lazy"
+            />
+          </a>
+          <p responsive data-class-xl="brewly-footer__tag">
+            Brew Better. <span class="text-accent">Live Better</span>.
+          </p>
         </div>
 
         <!-- Navigation: Explore -->
         <nav responsive data-class-xl="brewly-footer__col" aria-label="Explore">
-            <h4 responsive data-class-xl="brewly-footer__heading">Explore</h4>
-            <ul responsive data-class-xl="brewly-footer__list">
-                <li><a responsive data-class-xl="brewly-footer__link" href="#">Home</a></li>
-                <li><a responsive data-class-xl="brewly-footer__link" href="#">Products</a></li>
-                <li><a responsive data-class-xl="brewly-footer__link" href="#">About</a></li>
-                <li><a responsive data-class-xl="brewly-footer__link" href="#">Contact</a></li>
-            </ul>
+          <h4 responsive data-class-xl="brewly-footer__heading">Explore</h4>
+          <ul responsive data-class-xl="brewly-footer__list">
+            <li>
+              <a responsive data-class-xl="brewly-footer__link" href="#"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a responsive data-class-xl="brewly-footer__link" href="#"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a responsive data-class-xl="brewly-footer__link" href="#"
+                >About</a
+              >
+            </li>
+            <li>
+              <a responsive data-class-xl="brewly-footer__link" href="#"
+                >Contact</a
+              >
+            </li>
+          </ul>
         </nav>
 
         <!-- Navigation: Support -->
         <nav responsive data-class-xl="brewly-footer__col" aria-label="Support">
-            <h4 responsive data-class-xl="brewly-footer__heading">Support</h4>
-            <ul responsive data-class-xl="brewly-footer__list">
-                <li><a responsive data-class-xl="brewly-footer__link" href="#">FAQs</a></li>
-                <li><a responsive data-class-xl="brewly-footer__link" href="#">Shipping &amp; Returns</a></li>
-                <li><a responsive data-class-xl="brewly-footer__link" href="#">Privacy Policy</a></li>
-                <li><a responsive data-class-xl="brewly-footer__link" href="#">Terms of Service</a></li>
-            </ul>
+          <h4 responsive data-class-xl="brewly-footer__heading">Support</h4>
+          <ul responsive data-class-xl="brewly-footer__list">
+            <li>
+              <a responsive data-class-xl="brewly-footer__link" href="#"
+                >FAQs</a
+              >
+            </li>
+            <li>
+              <a responsive data-class-xl="brewly-footer__link" href="#"
+                >Shipping &amp; Returns</a
+              >
+            </li>
+            <li>
+              <a responsive data-class-xl="brewly-footer__link" href="#"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a responsive data-class-xl="brewly-footer__link" href="#"
+                >Terms of Service</a
+              >
+            </li>
+          </ul>
         </nav>
 
         <!-- CTA / Social -->
         <div responsive data-class-xl="brewly-footer__col brewly-footer__cta">
-            <h4 responsive data-class-xl="brewly-footer__heading">Stay Connected</h4>
-            <div responsive data-class-xl="brewly-footer__social">
-                <a responsive data-class-xl="brewly-footer__social-link" href="#" aria-label="Instagram"><i class="lucide-instagram"></i></a>
-                <a responsive data-class-xl="brewly-footer__social-link" href="#" aria-label="Facebook"><i class="lucide-facebook"></i></a>
-                <a responsive data-class-xl="brewly-footer__social-link" href="#" aria-label="Twitter"><i class="lucide-twitter"></i></a>
-            </div>
-            <a href="#" responsive data-class-xl="btn-newsletter" role="button">Join Newsletter</a>
+          <h4 responsive data-class-xl="brewly-footer__heading">
+            Stay Connected
+          </h4>
+          <div responsive data-class-xl="brewly-footer__social">
+            <a
+              responsive
+              data-class-xl="brewly-footer__social-link"
+              href="#"
+              aria-label="Instagram"
+              ><i class="lucide-instagram"></i
+            ></a>
+            <a
+              responsive
+              data-class-xl="brewly-footer__social-link"
+              href="#"
+              aria-label="Facebook"
+              ><i class="lucide-facebook"></i
+            ></a>
+            <a
+              responsive
+              data-class-xl="brewly-footer__social-link"
+              href="#"
+              aria-label="Twitter"
+              ><i class="lucide-twitter"></i
+            ></a>
+          </div>
+          <a href="#" responsive data-class-xl="btn-newsletter" role="button"
+            >Join Newsletter</a
+          >
         </div>
-    </div>
+      </div>
 
-    <!-- Copyright -->
-    <div responsive data-class-xl="brewly-footer__bottom">
+      <!-- Copyright -->
+      <div responsive data-class-xl="brewly-footer__bottom">
         <p responsive data-class-xl="brewly-footer__small">
-            © <span id="brewly-year"></span> Brewly. All rights reserved.
+          © <span id="brewly-year"></span> Brewly. All rights reserved.
         </p>
-    </div>
-</footer>
-</body>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -191,3 +191,13 @@
   object-fit: cover;
   display: block;
 }
+
+.icon-s::before {
+    font-size: var(--size-icon-small);
+}
+.icon-m::before {
+    font-size: var(--size-icon-medium);
+}
+.icon-l::before {
+    font-size: var(--size-icon-large);
+}

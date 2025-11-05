@@ -6,6 +6,9 @@
  * Those map to element.dataset.classS / classM / classL / classXl
  */
 
+/* Brewly — Reviewed: 2025-11-05 — responsive.js
+  Applies data-class-* attributes to elements based on screen size.
+*/
 const responsiveElems = document.querySelectorAll("[responsive]");
 
 function windowSize() {

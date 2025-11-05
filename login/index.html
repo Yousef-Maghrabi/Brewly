@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Brewly — Login</title>
+
+    <!-- Core styles / utilities from Brewly design system -->
+    <link rel="stylesheet" href="/styles/globals.css" />
+    <link rel="stylesheet" href="/styles/utils/flex.css" />
+    <link rel="stylesheet" href="/styles/utils/grid.css" />
+    <link rel="stylesheet" href="/styles/utils/text.css" />
+    <link rel="stylesheet" href="/styles/utils/sizing.css" />
+    <link rel="stylesheet" href="/styles/utils/radius.css" />
+    <link rel="stylesheet" href="/styles/utils/spacing.css" />
+    <link rel="stylesheet" href="/styles/utils/layout.css" />
+    <link rel="stylesheet" href="/styles/utils/position.css" />
+    <link rel="stylesheet" href="/styles/components/button.css" />
+    <link rel="stylesheet" href="/styles/components/tabs.css" />
+    <link rel="stylesheet" href="/styles/components/link.css" />
+    <link rel="stylesheet" href="/styles/components/input.css" />
+    <link rel="stylesheet" href="/styles/motion/transition.css" />
+
+    <!-- Local component styles (minimal, only layout & tokens usage) -->
+    <link rel="stylesheet" href="/login/style.css" />
+
+    <!-- Optional icons (used for visual affordances only) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lucide-static@latest/font/lucide.css"
+    />
+
+    <!-- Small JS helpers used by the system (responsive + tabs conventions) -->
+    <script defer src="/scripts/lib/responsive.js"></script>
+    <script defer src="/scripts/lib/tabs.js"></script>
+  </head>
+  <body>
+    <main
+      class="layout_section flex_center bg-gradient"
+      data-class-s="padding-m"
+      data-class-l="padding-l"
+    >
+      <!-- Brewly — Reviewed: 2025-11-05 — Login page updated for accessibility and token usage -->
+      <div class="login-wrap w-full h-vh-100 flex-h flex_center">
+        <div
+          responsive
+          data-class-xl=" login-card radius-l shadow spacing_pad-h_l motion-fade-in"
+          data-class-m=" login-card radius-l shadow w-full motion-fade-in"
+          role="main"
+          aria-labelledby="auth-title"
+          data-class-l="w-600"
+        >
+          <header class="flex-v flex_align-center spacing_pad-v_m">
+            <img src="/assets/logo.webp" alt="Brewly" class="brand-logo" />
+            <h1
+              responsive
+              data-class-xl="text_size-m text-muted spacing_pad-v_s text-accent"
+              data-class-m="text_size-s text-muted spacing_pad-v_s text-accent"
+            >
+              Sign in to you account.
+            </h1>
+          </header>
+
+          <section class="card-body">
+            <div
+              id="auth-tabs"
+              class="tabs-container flex-h flex_align-center w-full gap-m flex_justify-center"
+              role="tablist"
+              aria-label="Authentication tabs"
+            >
+              <button
+                id="login-tab"
+                class="tab active"
+                data-content="login-content"
+                role="tab"
+                aria-selected="true"
+                aria-controls="login-content"
+                onclick="openTab('login-tab','auth-tabs','auth-contents')"
+              >
+                Login
+              </button>
+              <button
+                id="signup-tab"
+                class="tab"
+                data-content="signup-content"
+                role="tab"
+                aria-selected="false"
+                aria-controls="signup-content"
+                onclick="openTab('signup-tab','auth-tabs','auth-contents')"
+              >
+                Sign Up
+              </button>
+            </div>
+
+            <div id="auth-contents" class="tab_content-container">
+              <div
+                id="login-content"
+                class="tab-content active"
+                role="tabpanel"
+                aria-labelledby="login-tab"
+              >
+                <form
+                  id="login-form"
+                  class="flex-v gap-m w-full spacing_pad-v_l"
+                  onsubmit="return false;"
+                  novalidate
+                >
+                  <label class="flex-v gap-s spacing_margin-v_m">
+                    <span class="text_size-s text_weight-normal">Email</span>
+                    <input
+                      id="login-email"
+                      name="email"
+                      type="email"
+                      inputmode="email"
+                      placeholder="you@brewly.com"
+                      class="input w-full"
+                      required
+                      aria-required="true"
+                    />
+                  </label>
+
+                  <label class="flex-v gap-s spacing_margin-v_m">
+                    <span class="text_size-s text_weight-normal">Password</span>
+                    <input
+                      id="login-password"
+                      name="password"
+                      type="password"
+                      placeholder="Enter your password"
+                      class="input w-full"
+                      required
+                      aria-required="true"
+                    />
+                  </label>
+
+                  <button
+                    type="submit"
+                    class="btn--accent btn--l radius-m transition"
+                  >
+                    Sign In
+                  </button>
+
+                  <p
+                    responsive
+                    data-class-xl="text_size-s text-muted flex-h flex_align-center flex_justify-center gap-m"
+                    data-class-m="text_size-s text-muted flex-v flex_align-center flex_justify-center gap-m"
+                  >
+                    Don’t have an account?
+                    <a href="/register/" class="link">Create one</a>
+                  </p>
+                </form>
+              </div>
+
+              <div
+                id="signup-content"
+                class="tab-content"
+                role="tabpanel"
+                aria-labelledby="signup-tab"
+                hidden
+              >
+                <form
+                  id="signup-form"
+                  class="flex-v gap-m w-full spacing_pad-v_l"
+                  onsubmit="return false;"
+                  novalidate
+                >
+                  <label class="flex-v gap-s spacing_margin-v_m">
+                    <span class="text_size-s text_weight-normal">Email</span>
+                    <input
+                      id="signup-email"
+                      name="email"
+                      type="email"
+                      placeholder="you@brewly.com"
+                      class="input w-full"
+                      required
+                      aria-required="true"
+                    />
+                  </label>
+
+                  <label class="flex-v gap-s spacing_margin-v_m">
+                    <span class="text_size-s text_weight-normal">Password</span>
+                    <input
+                      id="signup-password"
+                      name="password"
+                      type="password"
+                      placeholder="Create a password"
+                      class="input w-full"
+                      required
+                      aria-required="true"
+                    />
+                  </label>
+
+                  <label class="flex-v gap-s spacing_margin-v_m">
+                    <span class="text_size-s text_weight-normal"
+                      >Confirm Password</span
+                    >
+                    <input
+                      id="signup-confirm"
+                      name="confirmPassword"
+                      type="password"
+                      placeholder="Confirm password"
+                      class="input w-full"
+                      required
+                      aria-required="true"
+                    />
+                  </label>
+
+                  <div class="flex-h flex_align-center flex_justify-end">
+                    <button
+                      type="submit"
+                      class="btn--accent btn--l radius-m transition w-full"
+                    >
+                      Create account
+                    </button>
+                  </div>
+
+                  <p
+                    responsive
+                    data-class-xl="text_size-s text-muted flex-h flex_justify-center flex_align-center gap-m"
+                    data-class-m="text_size-s text-muted flex-v flex_align-center flex_justify-center gap-m"
+                  >
+                    Already have an account?
+                    <a
+                      class="link"
+                      onclick="openTab('login-tab','auth-tabs','auth-contents')"
+                      >Sign in</a
+                    >
+                  </p>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Minimal script to toggle hidden panels in an accessible way (keeps markup hooks used by system tabs.js) -->
+    <script>
+      // Ensure tab panels have the hidden attribute toggled for accessibility when tabs.js isn't loaded yet.
+      (function () {
+        const tabs = document.querySelectorAll("#auth-tabs .tab");
+        function syncPanels() {
+          const container = document.getElementById("auth-contents");
+          if (!container) return;
+          tabs.forEach((btn) => {
+            const contentId = btn.getAttribute("data-content");
+            const panel = document.getElementById(contentId);
+            if (!panel) return;
+            const isActive = btn.classList.contains("active");
+            panel.hidden = !isActive;
+            btn.setAttribute("aria-selected", isActive ? "true" : "false");
+          });
+        }
+        // initial
+        syncPanels();
+        // also observe tab mutations for live sync
+        const observer = new MutationObserver(syncPanels);
+        observer.observe(document.getElementById("auth-tabs"), {
+          attributes: true,
+          subtree: true,
+          attributeFilter: ["class"],
+        });
+      })();
+    </script>
+  </body>
+</html>
